@@ -1,3 +1,15 @@
 # ninja log v5
 1	1141	7435098142199439	CMakeFiles/search_engine.dir/main.cpp.obj	c748ccd540ac18d7
 1156	1300	7435098143769986	search_engine.exe	c3d5c5363c28dbe
+5	3012	7435290377678894	CMakeFiles/search_engine.dir/main.cpp.obj	c748ccd540ac18d7
+3013	3713	7435290384679170	search_engine.exe	c3d5c5363c28dbe
+6	3617	7435293680797830	CMakeFiles/search_engine.dir/main.cpp.obj	c748ccd540ac18d7
+3618	4273	7435293690003678	search_engine.exe	c3d5c5363c28dbe
+4	2065	7435298957832657	CMakeFiles/search_engine.dir/main.cpp.obj	c748ccd540ac18d7
+2066	2570	7435298962852905	search_engine.exe	c3d5c5363c28dbe
+4	2092	7435299180875775	CMakeFiles/search_engine.dir/main.cpp.obj	c748ccd540ac18d7
+2093	2667	7435299186606885	search_engine.exe	c3d5c5363c28dbe
+4	2059	7435301940196749	CMakeFiles/search_engine.dir/main.cpp.obj	c748ccd540ac18d7
+2060	2520	7435301944782814	search_engine.exe	c3d5c5363c28dbe
+4	2162	7435305759337983	CMakeFiles/search_engine.dir/main.cpp.obj	c748ccd540ac18d7
+2162	2699	7435305764678493	search_engine.exe	c3d5c5363c28dbe

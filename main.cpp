@@ -3,6 +3,7 @@
 #include <fstream>
 
 class ConverterJSON{
+public:
     void initConfigJSON(){
         std::ofstream file("config.json");
 
@@ -40,8 +41,8 @@ class ConverterJSON{
     void initAnswersJSON(){
         std::ofstream file("answers.json");
 
-        nlohmann::json request001AttributeFilling;
-        request001AttributeFilling["result"] = "true";
+        nlohmann::json request001ResultAttributeFilling;
+        request001ResultAttributeFilling["result"] = "true";
         nlohmann::json request001RelevanceAttributeFilling;
         nlohmann::json temp;
         temp["docid"] = 0;
@@ -59,25 +60,32 @@ class ConverterJSON{
         temp["docid"] = 4;
         temp["rank"] = 0.561;
         request001RelevanceAttributeFilling[4] = temp;
-        request001AttributeFilling["relevance"] = request001RelevanceAttributeFilling;
+        nlohmann::json request001AttributeFilling;
+        request001AttributeFilling["request001"] = {request001ResultAttributeFilling, request001RelevanceAttributeFilling};
 
-        nlohmann::json request002AttributeFilling;
-        request002AttributeFilling["result"] = "true";
+        nlohmann::json request002ResultAttributeFilling;
+        request002ResultAttributeFilling["result"] = "true";
         nlohmann::json request002RelevanceAttributeFilling;
         temp["docid"] = 0;
         temp["rank"] = 0.769;
         request002RelevanceAttributeFilling = temp;
-        request002AttributeFilling["relevance"] = request002RelevanceAttributeFilling;
+        nlohmann::json request002AttributeFilling;
+        request002AttributeFilling["request002"] = {request002ResultAttributeFilling, request002RelevanceAttributeFilling};
 
+        nlohmann::json request003ResultAttributeFilling;
+        request003ResultAttributeFilling["result"] = "false";
         nlohmann::json request003AttributeFilling;
-        request003AttributeFilling["result"] = "false";
+        request003AttributeFilling["request003"] = {request003ResultAttributeFilling};
 
         nlohmann::json answers;
         answers["answers"] = {request001AttributeFilling, request002AttributeFilling, request003AttributeFilling};
-        file << amswers.dump(4);
+        file << answers.dump(4);
     }
 };
 
 int main() {
-    ;
+    ConverterJSON json;
+    json.initAnswersJSON();
+    json.initConfigJSON();
+    json.initRequestsJSON();
 }
