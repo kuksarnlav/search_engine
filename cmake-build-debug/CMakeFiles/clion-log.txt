@@ -1,0 +1,5 @@
+"D:\Programs\CLion\CLion 2022.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/Programs/CLion/CLion 2022.2/bin/ninja/win/ninja.exe" -G Ninja -S "E:\Programs\Git Projects\search_engine" -B "E:\Programs\Git Projects\search_engine\cmake-build-debug"
+-- Using the multi-header code from E:/Programs/Git Projects/search_engine/nlohmann_json/include/
+-- Configuring done
+-- Generating done
+-- Build files have been written to: E:/Programs/Git Projects/search_engine/cmake-build-debug
