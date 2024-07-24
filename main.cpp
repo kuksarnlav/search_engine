@@ -40,7 +40,41 @@ class ConverterJSON{
     void initAnswersJSON(){
         std::ofstream file("answers.json");
 
+        nlohmann::json request001AttributeFilling;
+        request001AttributeFilling["result"] = "true";
+        nlohmann::json request001RelevanceAttributeFilling;
+        nlohmann::json temp;
+        temp["docid"] = 0;
+        temp["rank"] = 0.989;
+        request001RelevanceAttributeFilling[0] = temp;
+        temp["docid"] = 1;
+        temp["rank"] = 0.897;
+        request001RelevanceAttributeFilling[1] = temp;
+        temp["docid"] = 2;
+        temp["rank"] = 0.750;
+        request001RelevanceAttributeFilling[2] = temp;
+        temp["docid"] = 3;
+        temp["rank"] = 0.670;
+        request001RelevanceAttributeFilling[3] = temp;
+        temp["docid"] = 4;
+        temp["rank"] = 0.561;
+        request001RelevanceAttributeFilling[4] = temp;
+        request001AttributeFilling["relevance"] = request001RelevanceAttributeFilling;
 
+        nlohmann::json request002AttributeFilling;
+        request002AttributeFilling["result"] = "true";
+        nlohmann::json request002RelevanceAttributeFilling;
+        temp["docid"] = 0;
+        temp["rank"] = 0.769;
+        request002RelevanceAttributeFilling = temp;
+        request002AttributeFilling["relevance"] = request002RelevanceAttributeFilling;
+
+        nlohmann::json request003AttributeFilling;
+        request003AttributeFilling["result"] = "false";
+
+        nlohmann::json answers;
+        answers["answers"] = {request001AttributeFilling, request002AttributeFilling, request003AttributeFilling};
+        file << amswers.dump(4);
     }
 };
 
