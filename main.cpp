@@ -4,6 +4,7 @@
 
 class ConverterJSON{
 public:
+    ConverterJSON() = default;
     void initConfigJSON(){
         std::ofstream file("config.json");
 
@@ -81,6 +82,50 @@ public:
         answers["answers"] = {request001AttributeFilling, request002AttributeFilling, request003AttributeFilling};
         file << answers.dump(4);
     }
+
+    std::vector<std::string> GetTextDocuments(){
+        std::vector<std::string> textDocuments;
+
+        std::ifstream file("config.json");
+        nlohmann::json configJSON;
+        file >> configJSON;
+
+        for (int i = 0; i < configJSON["files"].size(); i++){
+            textDocuments.push_back(configJSON["files"][i]);
+        }
+
+        return textDocuments;
+    }
+
+    int GetResponsesLimit(){
+        std::ifstream file("config.json");
+        nlohmann::json configJSON;
+        file >> configJSON;
+
+        return configJSON["config"]["max_responses"];
+    }
+
+    std::vector<std::string> GetRequests(){
+        std::vector<std::string> requests;
+
+        std::ifstream file("requests.json");
+        nlohmann::json requestsJSON;
+        file >> requestsJSON;
+
+        for (int i = 0; i < requestsJSON["requests"].size(); i++){
+            requests.push_back(requestsJSON["requests"][i]);
+        }
+
+        for (int i = 0; i < requests.size(); i++){
+            std::cout << requests[i] << ' ';
+        }
+
+        return requests;
+    }
+// Положить в файл answers.json результаты поисковых запросов
+    void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){
+        ;
+    }
 };
 
 int main() {
@@ -88,4 +133,5 @@ int main() {
     json.initAnswersJSON();
     json.initConfigJSON();
     json.initRequestsJSON();
+
 }
