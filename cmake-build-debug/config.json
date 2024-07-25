@@ -5,8 +5,6 @@
         "version": 0.1
     },
     "files": [
-        "resources/file001.txt",
-        "resources/file002.txt",
-        "resources/file003.txt"
+        "ENTER HERE THE PATH TO THE TXT FILE"
     ]
 }

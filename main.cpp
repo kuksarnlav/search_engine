@@ -16,9 +16,7 @@ public:
         // N of words in a file <= 1000, latin lowercase, N of letters in a word <= 100, >=1 spaces between words
         // if a file not found, then drop an error, but the program continues
         nlohmann::json filesAttributeFilling;
-        filesAttributeFilling[0] = "resources/file001.txt";
-        filesAttributeFilling[1] = "resources/file002.txt";
-        filesAttributeFilling[2] = "resources/file003.txt";
+        filesAttributeFilling[0] = "ENTER HERE THE PATH TO THE TXT FILE";
 
         nlohmann::json config;
         config["config"] = configAttributeFilling;
@@ -27,13 +25,9 @@ public:
     }
     void initRequestsJSON(){
         std::ofstream file("requests.json");
-
-        // N of requests <= 1000
-        // N of words in a request <= 10 && >= 1, only latin letters, >=1 spaces between words
+        
         nlohmann::json requestsAttributeFilling;
-        requestsAttributeFilling[0] = "some words";
-        requestsAttributeFilling[1] = "some words";
-        requestsAttributeFilling[2] = "some words";
+        requestsAttributeFilling[0] = "ENTER HERE WORDS FOR SEARCH ENGINE, N of requests <= 1000, N of words in a request <= 10 && >= 1, only latin letters, >=1 spaces between words";
 
         nlohmann::json requests;
         requests["requests"] = requestsAttributeFilling;
@@ -122,9 +116,9 @@ public:
 
         return requests;
     }
-// Положить в файл answers.json результаты поисковых запросов
-    void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){
-        ;
+
+    void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){ // Положить в файл answers.json результаты поисковых запросов
+        //
     }
 };
 

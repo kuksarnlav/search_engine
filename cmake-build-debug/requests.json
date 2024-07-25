@@ -1,7 +1,5 @@
 {
     "requests": [
-        "some words",
-        "some words",
-        "some words"
+        "ENTER HERE WORDS FOR SEARCH ENGINE, N of requests <= 1000, N of words in a request <= 10 && >= 1, only latin letters, >=1 spaces between words"
     ]
 }
