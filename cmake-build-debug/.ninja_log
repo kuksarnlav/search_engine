@@ -1,10 +1,15 @@
 # ninja log v5
-4	312	7436151385488425	CMakeFiles/search_engine.dir/main.cpp.obj	c748ccd540ac18d7
-1538	1685	7436149520535955	search_engine.exe	2feda6431506e266
+11	4175	7437730881655207	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
+4176	8765	7437730927599598	search_engine.exe	bdffdb56cd3394fd
 9	1538	7436150638993755	CMakeFiles/search_engine.dir/ConverterJSON.cpp.obj	c7c905e429d04dd3
-0	180	7436157605557070	build.ninja	8ebe8ea27a01520e
-0	161	7436157605557070	build.ninja	8ebe8ea27a01520e
-3	2485	7436157630577027	CMakeFiles/search_engine.dir/main.cpp.obj	c748ccd540ac18d7
-2485	3086	7436157636557489	search_engine.exe	c3d5c5363c28dbe
-4	2436	7436157974685537	CMakeFiles/search_engine.dir/main.cpp.obj	c748ccd540ac18d7
-2437	3028	7436157980610876	search_engine.exe	c3d5c5363c28dbe
+4176	8765	7437730927599598	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
+0	161	7437757676543605	build.ninja	8ebe8ea27a01520e
+11	5262	7436175790187286	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	f17682f0e52e259
+17	1018	7436175747820713	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	c7ae168ffb999d16
+6804	6871	7436175806390397	lib/libgtest_maind.a	4c26d9e99d25939a
+5264	6804	7436175805710372	lib/libgtestd.a	41c10e3c37f49de1
+4176	8765	7437730927599598	search_engine[1]_tests.cmake	bdffdb56cd3394fd
+9	3365	7437757715122371	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
+3365	5903	7437757740565269	search_engine.exe	bdffdb56cd3394fd
+3365	5903	7437757740565269	search_engine[1]_tests.cmake	bdffdb56cd3394fd
+3365	5903	7437757740565269	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd

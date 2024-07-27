@@ -34,6 +34,7 @@ public:
     }
 
     /*std::vector<std::vector<std::pair<int, float>>> getAnswers(){
+                        // add functional later
         std::vector<std::string> textDocuments = GetTextDocuments();
 
         std::vector<std::string> requestStrokes;

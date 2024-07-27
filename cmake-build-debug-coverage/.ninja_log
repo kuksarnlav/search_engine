@@ -1,0 +1,9 @@
+# ninja log v5
+22	1674	7437730955092718	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	f487ea03728730fa
+11870	11966	7437731058064601	lib/libgtest_maind.a	4c26d9e99d25939a
+3376	6306	7437743954127538	search_engine[1]_tests.cmake	4c32a9ced2c5e149
+6	3375	7437743924763373	CMakeFiles/search_engine.dir/main.cpp.obj	fc55edaa218c09cc
+12	9194	7437731030173692	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	23a795ab7ca9987b
+9197	11870	7437731057084634	lib/libgtestd.a	41c10e3c37f49de1
+3376	6306	7437743954127538	E:/Programs/Git Projects/search_engine/cmake-build-debug-coverage/search_engine[1]_tests.cmake	4c32a9ced2c5e149
+3376	6306	7437743954127538	search_engine.exe	4c32a9ced2c5e149
