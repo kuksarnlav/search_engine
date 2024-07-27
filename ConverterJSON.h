@@ -33,30 +33,9 @@ public:
         file << answers.dump(4);
     }
 
-    /*std::vector<std::vector<std::pair<int, float>>> getAnswers(){
-                        // add functional later
-        std::vector<std::string> textDocuments = GetTextDocuments();
-
-        std::vector<std::string> requestStrokes;
-        std::ifstream file("requests.json");
-        nlohmann::json requestsJSON;
-        file >> requestsJSON;
-
-        for (int i = 0; i < requestsJSON["requests"].size(); i++){
-            requestStrokes.push_back(requestsJSON["requests"][i]);
-        }
-
-        for (int i = 0; i < requestStrokes.size(); i++){
-            std::istringstream iss(requestStrokes[i]);
-            std::string word;
-
-            while (iss >> word) {
-                std::cout << word << std::endl;
-            }
-
-
-        }
-    }*/
+    std::vector<std::vector<std::pair<int, float>>> getAnswers(){
+        //
+    }
 
     std::vector<std::string> GetTextDocuments(){
         std::vector<std::string> textDocuments;

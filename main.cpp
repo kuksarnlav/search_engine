@@ -4,7 +4,6 @@
 TEST(sample_test_case, sample_test){
     ConverterJSON searchMachine;
     searchMachine.GetTextDocuments();
-    EXPECT_EQ(1, 1);
 }
 
 /*
