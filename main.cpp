@@ -1,12 +1,15 @@
 #include "ConverterJSON.h"
-#include "gtest/gtest.h"
+#include "InvertedIndex.h"
+/*#include "gtest/gtest.h"
 
 TEST(sample_test_case, sample_test){
     ConverterJSON searchMachine;
-    searchMachine.GetTextDocuments();
-}
-
-/*int main() {
-    ConverterJSON searchMachine;
-    searchMachine.GetTextDocuments();
+    InvertedIndex structure;
+    structure.UpdateDocumentBase(searchMachine.GetTextDocuments());
 }*/
+
+int main() {
+    ConverterJSON searchMachine;
+    InvertedIndex structure;
+    structure.UpdateDocumentBase(searchMachine.GetTextDocuments());
+}

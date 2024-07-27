@@ -45,7 +45,16 @@ public:
         file >> configJSON;
 
         for (int i = 0; i < configJSON["files"].size(); i++){
-            textDocuments.push_back(configJSON["files"][i]);
+            std::string filePath = configJSON["files"][i];
+            std::ifstream file(filePath);
+            std::string line;
+            if (file.is_open()) {
+                std::getline(file, line);
+            } else{
+                std::cerr << "Unable to open file" << std::endl;
+            }
+            file.close();
+            textDocuments.push_back(line);
         }
 
         return textDocuments;
