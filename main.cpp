@@ -6,8 +6,7 @@ TEST(sample_test_case, sample_test){
     searchMachine.GetTextDocuments();
 }
 
-/*
-int main() {
+/*int main() {
     ConverterJSON searchMachine;
     searchMachine.GetTextDocuments();
 }*/
