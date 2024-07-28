@@ -48,7 +48,7 @@ public:
             std::string filePath = configJSON["files"][i];
             std::ifstream file(filePath);
             std::string line;
-            if (file.is_open()) {
+            if (file.is_open()){
                 std::getline(file, line);
             } else{
                 std::cerr << "Unable to open file" << std::endl;
