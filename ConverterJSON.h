@@ -33,10 +33,6 @@ public:
         file << answers.dump(4);
     }
 
-    /*std::vector<std::vector<std::pair<int, float>>> getAnswers(){
-        //
-    }*/
-
     std::vector<std::string> GetTextDocuments(){
         std::vector<std::string> textDocuments;
 
@@ -77,10 +73,6 @@ public:
 
         for (int i = 0; i < requestsJSON["requests"].size(); i++){
             requests.push_back(requestsJSON["requests"][i]);
-        }
-
-        for (int i = 0; i < requests.size(); i++){
-            std::cout << requests[i] << ' ';
         }
 
         return requests;
