@@ -33,9 +33,9 @@ public:
         file << answers.dump(4);
     }
 
-    std::vector<std::vector<std::pair<int, float>>> getAnswers(){
+    /*std::vector<std::vector<std::pair<int, float>>> getAnswers(){
         //
-    }
+    }*/
 
     std::vector<std::string> GetTextDocuments(){
         std::vector<std::string> textDocuments;
@@ -86,7 +86,7 @@ public:
         return requests;
     }
 
-    void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){ // Положить в файл answers.json результаты поисковых запросов
+    /*void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){ // Положить в файл answers.json результаты поисковых запросов
         //
-    }
+    }*/
 };
