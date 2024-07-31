@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <set>
+#include <map>
 #include <iostream>
 #include "gtest/gtest.h"
 
@@ -20,19 +21,41 @@ public:
 
     //std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input){
     void search(const std::vector<std::string>& queries_input){
+        std::vector<std::vector<RelativeIndex>> documentRelativeRelevance;
 
-        std::vector<std::set<std::string>> uniqueWords; //1-2
+        std::vector<int> maxAbsoluteRelevance;
+        std::vector<std::set<std::string>> uniqueWords;
+
         for (int i = 0; i < queries_input.size(); i++){
+            maxAbsoluteRelevance.emplace_back(0);
             std::istringstream iss(queries_input[i]);
             std::string word;
             std::set<std::string> words;
             while (iss >> word){
+                maxAbsoluteRelevance[i]++;
                 words.insert(word);
             }
             uniqueWords.emplace_back(words);
         }
 
-        //
+        std::vector<std::multimap<int, std::string>> uniqueWordsOccurrence;
+
+        for (int i = 0; i < uniqueWords.size(); i++){
+            std::multimap<int, std::string> requestUniqueWordsOccurrence;
+            for (auto it = uniqueWords[i].begin(); it != uniqueWords[i].end(); ++it){
+                int wordOccurrence = 0;
+                for (int j = 0; j < _index.GetWordCount(*it).size(); j++){
+                    wordOccurrence += _index.GetWordCount(*it)[j].count;
+                }
+                requestUniqueWordsOccurrence.insert({wordOccurrence, *it});
+            }
+            uniqueWordsOccurrence.emplace_back(requestUniqueWordsOccurrence);
+        }
+
+        std::vector<size_t> rarestWordDocuments;
+        for (int i = 0; i < uniqueWordsOccurrence.size(); i++){
+            //uniqueWordsOccurrence[i];
+        }
     }
 
 private:
