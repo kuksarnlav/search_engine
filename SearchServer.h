@@ -19,8 +19,7 @@ class SearchServer {
 public:
     SearchServer(InvertedIndex idx) : _index(idx){};
 
-    //std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input){
-    void search(const std::vector<std::string>& queries_input){
+    std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input){
         std::vector<std::vector<RelativeIndex>> documentRelativeRelevance;
 
         std::vector<int> maxAbsoluteRelevance;
@@ -38,24 +37,65 @@ public:
             uniqueWords.emplace_back(words);
         }
 
-        std::vector<std::multimap<int, std::string>> uniqueWordsOccurrence;
+        std::vector<std::multimap<int, std::string>> uniqueWordsOccurrenceInAllRequests;
 
         for (int i = 0; i < uniqueWords.size(); i++){
-            std::multimap<int, std::string> requestUniqueWordsOccurrence;
+            std::multimap<int, std::string> requestUniqueWordsOccurrenceInOneRequest;
             for (auto it = uniqueWords[i].begin(); it != uniqueWords[i].end(); ++it){
                 int wordOccurrence = 0;
                 for (int j = 0; j < _index.GetWordCount(*it).size(); j++){
                     wordOccurrence += _index.GetWordCount(*it)[j].count;
                 }
-                requestUniqueWordsOccurrence.insert({wordOccurrence, *it});
+                requestUniqueWordsOccurrenceInOneRequest.insert({wordOccurrence, *it});
             }
-            uniqueWordsOccurrence.emplace_back(requestUniqueWordsOccurrence);
+            uniqueWordsOccurrenceInAllRequests.emplace_back(requestUniqueWordsOccurrenceInOneRequest);
         }
 
-        std::vector<size_t> rarestWordDocuments;
-        for (int i = 0; i < uniqueWordsOccurrence.size(); i++){
-            //uniqueWordsOccurrence[i];
+        int noMatchInt = -2;
+
+        for (int i = 0; i < uniqueWordsOccurrenceInAllRequests.size(); i++){ // for all requests
+            std::vector<int> rarestWordDocuments;
+            auto firstVectorElement = uniqueWordsOccurrenceInAllRequests.begin();
+            auto firstMultimapElement = firstVectorElement->begin();
+            for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){
+                rarestWordDocuments.emplace_back(_index.GetWordCount(firstMultimapElement->second)[j].doc_id);
+            }
+
+            for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){ // here request unique words length, that mean 2, 'cause milk is in all 2 docs
+                for (auto it = std::next(uniqueWordsOccurrenceInAllRequests[i].begin()); it != uniqueWordsOccurrenceInAllRequests[i].end(); it++){ // here we get all other words to check
+                    for (int k = 0; k < _index.GetWordCount(it->second).size(); k++){ // here we get array of Entry struct, we need to check doc_id's in rarestWordDocuments and that array
+                        if (rarestWordDocuments[j] == _index.GetWordCount(it->second)[k].doc_id){
+                            break;
+                        } else if (k == _index.GetWordCount(it->second).size() - 1){
+                            rarestWordDocuments[j] = noMatchInt;
+                        }
+                    }
+                }
+            }
+
+            for (int j = 0; j < rarestWordDocuments.size(); j++){
+                if (rarestWordDocuments[j] == noMatchInt){
+                    rarestWordDocuments.erase(rarestWordDocuments.begin() + j);
+                    j--;
+                }
+            }
+
+            /*if (rarestWordDocumentsCopy.empty()){
+                RelativeIndex tempIndex;
+                tempIndex.rank = -2;
+                documentRelativeRelevance[i].emplace_back(tempIndex);
+            } else {
+                RelativeIndex tempIndex;
+
+                for (int j = 0; j < rarestWordDocumentsCopy.size(); j++){
+                    // continue here
+                }
+
+                *//*documentRelativeRelevance[i].emplace_back(tempIndex);*//*
+            }*/
         }
+
+        return documentRelativeRelevance;
     }
 
 private:
