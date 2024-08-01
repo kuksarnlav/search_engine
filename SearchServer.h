@@ -20,7 +20,6 @@ public:
     SearchServer(InvertedIndex idx) : _index(idx){};
 
     std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input){
-        std::vector<std::vector<RelativeIndex>> documentRelativeRelevance;
 
         std::vector<int> maxAbsoluteRelevance;
         std::vector<std::set<std::string>> uniqueWords;
@@ -51,7 +50,8 @@ public:
             uniqueWordsOccurrenceInAllRequests.emplace_back(requestUniqueWordsOccurrenceInOneRequest);
         }
 
-        int noMatchInt = -2;
+        size_t noMatch = -2;
+        std::vector<std::vector<RelativeIndex>> documentRelativeRelevance;
 
         for (int i = 0; i < uniqueWordsOccurrenceInAllRequests.size(); i++){ // for all requests
             std::vector<int> rarestWordDocuments;
@@ -67,32 +67,55 @@ public:
                         if (rarestWordDocuments[j] == _index.GetWordCount(it->second)[k].doc_id){
                             break;
                         } else if (k == _index.GetWordCount(it->second).size() - 1){
-                            rarestWordDocuments[j] = noMatchInt;
+                            rarestWordDocuments[j] = noMatch;
                         }
                     }
                 }
             }
 
             for (int j = 0; j < rarestWordDocuments.size(); j++){
-                if (rarestWordDocuments[j] == noMatchInt){
+                if (rarestWordDocuments[j] == noMatch){
                     rarestWordDocuments.erase(rarestWordDocuments.begin() + j);
                     j--;
                 }
             }
 
-            /*if (rarestWordDocumentsCopy.empty()){
-                RelativeIndex tempIndex;
-                tempIndex.rank = -2;
-                documentRelativeRelevance[i].emplace_back(tempIndex);
+            float absoluteRankMax = (float)noMatch;
+
+            if (rarestWordDocuments.empty()){
+
+                std::vector<RelativeIndex> rarestWordDocument;
+                RelativeIndex tempIndex{noMatch, (float)noMatch};
+                rarestWordDocument.emplace_back(tempIndex);
+
+                documentRelativeRelevance.emplace_back(rarestWordDocument);
             } else {
-                RelativeIndex tempIndex;
+                for (size_t j = 0; j < rarestWordDocuments.size(); j++){
+                    std::vector<RelativeIndex> rarestWordDocument;
+                    for (auto it = uniqueWordsOccurrenceInAllRequests[i].begin(); it != uniqueWordsOccurrenceInAllRequests[i].end(); it++){
 
-                for (int j = 0; j < rarestWordDocumentsCopy.size(); j++){
-                    // continue here
+                        int k = 0;
+                        float absoluteRank;
+                        while (_index.GetWordCount(it->second)[k].doc_id != j){
+                            absoluteRank = _index.GetWordCount(it->second)[k].count;
+                            k++;
+                        }
+                        if (absoluteRankMax < absoluteRank){
+                            absoluteRankMax = absoluteRank;
+                        }
+
+                        RelativeIndex tempIndex{j, absoluteRank};
+                        rarestWordDocument.emplace_back(tempIndex);
+                    }
+                    documentRelativeRelevance.emplace_back(rarestWordDocument);
                 }
+            }
 
-                *//*documentRelativeRelevance[i].emplace_back(tempIndex);*//*
-            }*/
+            for (int j = 0; j < documentRelativeRelevance.size(); j++){
+                for (int k = 0; k < documentRelativeRelevance[j].size(); k++){
+                    documentRelativeRelevance[j][k].rank /= absoluteRankMax;
+                }
+            }
         }
 
         return documentRelativeRelevance;
