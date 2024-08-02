@@ -75,7 +75,7 @@ public:
             }
 
 
-            float noMatch = -2;
+            float noMatch = -1;
             if (rarestWordDocuments.empty()){
                 std::vector<RelativeIndex> rarestWordDocument;
                 RelativeIndex tempIndex{0, noMatch};
@@ -106,7 +106,6 @@ public:
                 }
             }
         }
-
 
         return documentRelativeRelevance;
     }

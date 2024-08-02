@@ -56,28 +56,35 @@ public:
     void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){
         std::ofstream file("answers.json");
 
-        //std::cout << answers[0][0].first << " " << answers[0][1].second;
+        std::vector<nlohmann::json> answersVector;
+        for (const auto& innerVector : answers){
+            int pairI = 0;
+            nlohmann::json requestRelevanceAttributeFilling;
+            for (const auto& pair : innerVector){
+                nlohmann::json requestAttributeFilling;
+                nlohmann::json requestResultAttributeFilling;
 
-        nlohmann::json request001ResultAttributeFilling;
-        request001ResultAttributeFilling["result"] = "true";
-        nlohmann::json request001RelevanceAttributeFilling;
-        nlohmann::json temp;
-        temp["docid"] = 0;
-        temp["rank"] = 0.000;
-        request001RelevanceAttributeFilling[0] = temp;
-        temp["docid"] = 1;
-        temp["rank"] = 0.000;
-        request001RelevanceAttributeFilling[1] = temp;
-        nlohmann::json request001AttributeFilling;
-        request001AttributeFilling["request001"] = {request001ResultAttributeFilling, request001RelevanceAttributeFilling};
+                if (pair.second >= 0){
+                    requestResultAttributeFilling["result"] = "true";
+                    requestAttributeFilling["request" + std::to_string(pairI + 1)] = {requestResultAttributeFilling};
 
-        nlohmann::json request002ResultAttributeFilling;
-        request002ResultAttributeFilling["result"] = "false";
-        nlohmann::json request002AttributeFilling;
-        request002AttributeFilling["request002"] = {request002ResultAttributeFilling};
+                    nlohmann::json temp;
+                    temp["docid"] = pair.first;
+                    temp["rank"] = pair.second;
+                    requestRelevanceAttributeFilling[pairI] = temp;
+                    requestAttributeFilling["request" + std::to_string(pairI + 1)].push_back(requestRelevanceAttributeFilling);
+                } else {
+                    requestResultAttributeFilling["result"] =  "false";
+                    requestAttributeFilling["request" + std::to_string(pairI + 1)] = {requestResultAttributeFilling};
+                }
+
+                answersVector.push_back(requestAttributeFilling);
+                pairI++;
+            }
+        }
 
         nlohmann::json answersJSON;
-        answersJSON["answers"] = {request001AttributeFilling, request002AttributeFilling};
+        answersJSON["answers"] = answersVector;
         file << answersJSON.dump(4);
     }
 };
