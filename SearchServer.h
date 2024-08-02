@@ -19,104 +19,94 @@ class SearchServer {
 public:
     SearchServer(InvertedIndex idx) : _index(idx){};
 
+    std::vector<std::vector<std::pair<int, float>>> convertRelativeIndexToPair(const std::vector<std::vector<RelativeIndex>>& relativeIndexVec){ // not tested yet // mb
+        std::vector<std::vector<std::pair<int, float>>> pairVec;
+        for (const auto& innerVec : relativeIndexVec){
+            std::vector<std::pair<int, float>> innerPairVec;
+            for (const auto& relativeIndex : innerVec){
+                innerPairVec.emplace_back(static_cast<int>(relativeIndex.doc_id), relativeIndex.rank);
+            }
+            pairVec.push_back(innerPairVec);
+        }
+        return pairVec;
+    }
+
     std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input){
 
-        std::vector<int> maxAbsoluteRelevance;
-        std::vector<std::set<std::string>> uniqueWords;
-
+        std::vector<std::vector<RelativeIndex>> documentRelativeRelevance;
         for (int i = 0; i < queries_input.size(); i++){
-            maxAbsoluteRelevance.emplace_back(0);
+
+            std::set<std::string> uniqueWords; // unique words in request into std::set
             std::istringstream iss(queries_input[i]);
             std::string word;
-            std::set<std::string> words;
             while (iss >> word){
-                maxAbsoluteRelevance[i]++;
-                words.insert(word);
+                uniqueWords.insert(word);
             }
-            uniqueWords.emplace_back(words);
-        }
 
-        std::vector<std::multimap<int, std::string>> uniqueWordsOccurrenceInAllRequests;
 
-        for (int i = 0; i < uniqueWords.size(); i++){
-            std::multimap<int, std::string> requestUniqueWordsOccurrenceInOneRequest;
-            for (auto it = uniqueWords[i].begin(); it != uniqueWords[i].end(); ++it){
+            std::multimap<int, std::string> uniqueWordsOccurrenceInRequest; // №request -> (frequency_in_all_requests - word) into std::map
+            for (auto it = uniqueWords.begin(); it != uniqueWords.end(); it++){
                 int wordOccurrence = 0;
-                for (int j = 0; j < _index.GetWordCount(*it).size(); j++){
-                    wordOccurrence += _index.GetWordCount(*it)[j].count;
+                for (int k = 0; k < _index.GetWordCount(*it).size(); k++){
+                    wordOccurrence += _index.GetWordCount(*it)[k].count;
                 }
-                requestUniqueWordsOccurrenceInOneRequest.insert({wordOccurrence, *it});
+                uniqueWordsOccurrenceInRequest.insert({wordOccurrence, *it});
             }
-            uniqueWordsOccurrenceInAllRequests.emplace_back(requestUniqueWordsOccurrenceInOneRequest);
-        }
 
-        size_t noMatch = -2;
-        std::vector<std::vector<RelativeIndex>> documentRelativeRelevance;
 
-        for (int i = 0; i < uniqueWordsOccurrenceInAllRequests.size(); i++){ // for all requests
-            std::vector<int> rarestWordDocuments;
-            auto firstVectorElement = uniqueWordsOccurrenceInAllRequests.begin();
-            auto firstMultimapElement = firstVectorElement->begin();
-            for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){
+            std::vector<size_t> rarestWordDocuments; // №document with all request words
+            auto firstMultimapElement = uniqueWordsOccurrenceInRequest.begin();
+            for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){ // rarest word №document
                 rarestWordDocuments.emplace_back(_index.GetWordCount(firstMultimapElement->second)[j].doc_id);
             }
 
-            for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){ // here request unique words length, that mean 2, 'cause milk is in all 2 docs
-                for (auto it = std::next(uniqueWordsOccurrenceInAllRequests[i].begin()); it != uniqueWordsOccurrenceInAllRequests[i].end(); it++){ // here we get all other words to check
-                    for (int k = 0; k < _index.GetWordCount(it->second).size(); k++){ // here we get array of Entry struct, we need to check doc_id's in rarestWordDocuments and that array
+
+            for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){ // deleting №document without request word
+                for (auto it = std::next(uniqueWordsOccurrenceInRequest.begin()); it != uniqueWordsOccurrenceInRequest.end(); it++){
+                    for (int k = 0; k < _index.GetWordCount(it->second).size(); k++){
                         if (rarestWordDocuments[j] == _index.GetWordCount(it->second)[k].doc_id){
                             break;
                         } else if (k == _index.GetWordCount(it->second).size() - 1){
-                            rarestWordDocuments[j] = noMatch;
+                            rarestWordDocuments.erase(rarestWordDocuments.begin() + j);
+                            j--;
                         }
                     }
                 }
             }
 
-            for (int j = 0; j < rarestWordDocuments.size(); j++){
-                if (rarestWordDocuments[j] == noMatch){
-                    rarestWordDocuments.erase(rarestWordDocuments.begin() + j);
-                    j--;
-                }
-            }
 
-            float absoluteRankMax = (float)noMatch;
-
+            float noMatch = -2;
             if (rarestWordDocuments.empty()){
-
                 std::vector<RelativeIndex> rarestWordDocument;
-                RelativeIndex tempIndex{noMatch, (float)noMatch};
+                RelativeIndex tempIndex{0, noMatch};
                 rarestWordDocument.emplace_back(tempIndex);
-
-                documentRelativeRelevance.emplace_back(rarestWordDocument);
             } else {
-                for (size_t j = 0; j < rarestWordDocuments.size(); j++){
-                    std::vector<RelativeIndex> rarestWordDocument;
-                    for (auto it = uniqueWordsOccurrenceInAllRequests[i].begin(); it != uniqueWordsOccurrenceInAllRequests[i].end(); it++){
+                float absoluteRankMax;
 
+                for (int j = 0; j < rarestWordDocuments.size(); j++){ // : documents
+                    std::vector<RelativeIndex> rarestWordDocument;
+                    float absoluteRank = 0;
+                    for (auto it = uniqueWords.begin(); it != uniqueWords.end(); it++){
                         int k = 0;
-                        float absoluteRank;
-                        while (_index.GetWordCount(it->second)[k].doc_id != j){
-                            absoluteRank = _index.GetWordCount(it->second)[k].count;
+                        while (_index.GetWordCount(*it)[k].doc_id != rarestWordDocuments[j]){
                             k++;
                         }
-                        if (absoluteRankMax < absoluteRank){
-                            absoluteRankMax = absoluteRank;
-                        }
-
-                        RelativeIndex tempIndex{j, absoluteRank};
-                        rarestWordDocument.emplace_back(tempIndex);
+                        absoluteRank += _index.GetWordCount(*it)[k].count;
                     }
+                    if (absoluteRankMax < absoluteRank){
+                        absoluteRankMax = absoluteRank;
+                    }
+                    RelativeIndex tempIndex{rarestWordDocuments[j], absoluteRank};
+                    rarestWordDocument.emplace_back(tempIndex);
                     documentRelativeRelevance.emplace_back(rarestWordDocument);
                 }
-            }
 
-            for (int j = 0; j < documentRelativeRelevance.size(); j++){
-                for (int k = 0; k < documentRelativeRelevance[j].size(); k++){
-                    documentRelativeRelevance[j][k].rank /= absoluteRankMax;
+                for (int j = 0; j < documentRelativeRelevance[i].size(); j++){
+                    documentRelativeRelevance[i][j].rank /= absoluteRankMax;
                 }
             }
         }
+
 
         return documentRelativeRelevance;
     }

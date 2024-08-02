@@ -7,31 +7,6 @@
 class ConverterJSON{
 public:
     ConverterJSON() = default;
-    void initAnswersJSON(){
-        std::ofstream file("answers.json");
-
-        nlohmann::json request001ResultAttributeFilling;
-        request001ResultAttributeFilling["result"] = "true";
-        nlohmann::json request001RelevanceAttributeFilling;
-        nlohmann::json temp;
-        temp["docid"] = 0;
-        temp["rank"] = 0.000;
-        request001RelevanceAttributeFilling[0] = temp;
-        temp["docid"] = 1;
-        temp["rank"] = 0.000;
-        request001RelevanceAttributeFilling[1] = temp;
-        nlohmann::json request001AttributeFilling;
-        request001AttributeFilling["request001"] = {request001ResultAttributeFilling, request001RelevanceAttributeFilling};
-
-        nlohmann::json request002ResultAttributeFilling;
-        request002ResultAttributeFilling["result"] = "false";
-        nlohmann::json request002AttributeFilling;
-        request002AttributeFilling["request002"] = {request002ResultAttributeFilling};
-
-        nlohmann::json answers;
-        answers["answers"] = {request001AttributeFilling, request002AttributeFilling};
-        file << answers.dump(4);
-    }
 
     std::vector<std::string> GetTextDocuments(){
         std::vector<std::string> textDocuments;
@@ -78,7 +53,31 @@ public:
         return requests;
     }
 
-    /*void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){ // Положить в файл answers.json результаты поисковых запросов
-        //
-    }*/
+    void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){
+        std::ofstream file("answers.json");
+
+        //std::cout << answers[0][0].first << " " << answers[0][1].second;
+
+        nlohmann::json request001ResultAttributeFilling;
+        request001ResultAttributeFilling["result"] = "true";
+        nlohmann::json request001RelevanceAttributeFilling;
+        nlohmann::json temp;
+        temp["docid"] = 0;
+        temp["rank"] = 0.000;
+        request001RelevanceAttributeFilling[0] = temp;
+        temp["docid"] = 1;
+        temp["rank"] = 0.000;
+        request001RelevanceAttributeFilling[1] = temp;
+        nlohmann::json request001AttributeFilling;
+        request001AttributeFilling["request001"] = {request001ResultAttributeFilling, request001RelevanceAttributeFilling};
+
+        nlohmann::json request002ResultAttributeFilling;
+        request002ResultAttributeFilling["result"] = "false";
+        nlohmann::json request002AttributeFilling;
+        request002AttributeFilling["request002"] = {request002ResultAttributeFilling};
+
+        nlohmann::json answersJSON;
+        answersJSON["answers"] = {request001AttributeFilling, request002AttributeFilling};
+        file << answersJSON.dump(4);
+    }
 };

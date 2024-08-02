@@ -11,5 +11,6 @@ int main() {
     structure.UpdateDocumentBase(searchMachine.GetTextDocuments());
 
     SearchServer searchServer(structure);
-    searchServer.search(searchMachine.GetRequests());
+
+    searchMachine.putAnswers(searchServer.convertRelativeIndexToPair(searchServer.search(searchMachine.GetRequests())));
 }
