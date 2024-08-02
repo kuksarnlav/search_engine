@@ -80,6 +80,7 @@ public:
                 std::vector<RelativeIndex> rarestWordDocument;
                 RelativeIndex tempIndex{0, noMatch};
                 rarestWordDocument.emplace_back(tempIndex);
+                documentRelativeRelevance.emplace_back(rarestWordDocument);
             } else {
                 float absoluteRankMax;
 
@@ -106,6 +107,8 @@ public:
                 }
             }
         }
+
+        std::cout << "]";
 
         return documentRelativeRelevance;
     }

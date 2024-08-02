@@ -57,8 +57,8 @@ public:
         std::ofstream file("answers.json");
 
         std::vector<nlohmann::json> answersVector;
+        int pairI = 0;
         for (const auto& innerVector : answers){
-            int pairI = 0;
             nlohmann::json requestRelevanceAttributeFilling;
             for (const auto& pair : innerVector){
                 nlohmann::json requestAttributeFilling;
