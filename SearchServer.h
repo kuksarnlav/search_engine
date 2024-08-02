@@ -108,8 +108,6 @@ public:
             }
         }
 
-        std::cout << "]";
-
         return documentRelativeRelevance;
     }
 
