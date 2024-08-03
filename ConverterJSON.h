@@ -56,35 +56,34 @@ public:
     void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){
         std::ofstream file("answers.json");
 
-        std::vector<nlohmann::json> answersVector;
-        int pairI = 0;
-        for (const auto& innerVector : answers){
-            nlohmann::json requestRelevanceAttributeFilling;
-            for (const auto& pair : innerVector){
-                nlohmann::json requestAttributeFilling;
-                nlohmann::json requestResultAttributeFilling;
+        int iRequest = 0;
+        nlohmann::json requestAttributeFilling;
+        for (const auto& request : answers){
+            int iDocument = 0;
+            nlohmann::json requestDocumentRelevance;
+            for (const auto& relativeIndex : request){
 
-                if (pair.second >= 0){
-                    requestResultAttributeFilling["result"] = "true";
-                    requestAttributeFilling["request" + std::to_string(pairI + 1)] = {requestResultAttributeFilling};
-
+                nlohmann::json requestResultAttribute;
+                if (relativeIndex.second >= 0){
+                    requestResultAttribute["result"] = "true";
                     nlohmann::json temp;
-                    temp["docid"] = pair.first;
-                    temp["rank"] = pair.second;
-                    requestRelevanceAttributeFilling[pairI] = temp;
-                    requestAttributeFilling["request" + std::to_string(pairI + 1)].push_back(requestRelevanceAttributeFilling);
+                    temp["docid"] = relativeIndex.first;
+                    temp["rank"] = relativeIndex.second;
+                    requestDocumentRelevance[iDocument] = {requestResultAttribute, temp};
                 } else {
-                    requestResultAttributeFilling["result"] =  "false";
-                    requestAttributeFilling["request" + std::to_string(pairI + 1)] = {requestResultAttributeFilling};
+                    requestResultAttribute["result"] = "false";
+                    requestDocumentRelevance[iDocument] = {requestResultAttribute};
                 }
 
-                answersVector.push_back(requestAttributeFilling);
-                pairI++;
+                iDocument++;
             }
+            requestAttributeFilling["request" + std::to_string(iRequest)] = {requestDocumentRelevance};
+
+            iRequest++;
         }
 
         nlohmann::json answersJSON;
-        answersJSON["answers"] = answersVector;
+        answersJSON["answers"] = requestAttributeFilling;
         file << answersJSON.dump(4);
     }
 };

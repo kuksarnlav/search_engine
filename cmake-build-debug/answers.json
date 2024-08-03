@@ -1,24 +1,35 @@
 {
-    "answers": [
-        {
-            "request1": [
-                {
-                    "result": "true"
-                },
+    "answers": {
+        "request0": [
+            [
                 [
+                    {
+                        "result": "true"
+                    },
+                    {
+                        "docid": 0,
+                        "rank": 0.8333333134651184
+                    }
+                ],
+                [
+                    {
+                        "result": "true"
+                    },
                     {
                         "docid": 1,
                         "rank": 1.0
                     }
                 ]
             ]
-        },
-        {
-            "request2": [
-                {
-                    "result": "false"
-                }
+        ],
+        "request1": [
+            [
+                [
+                    {
+                        "result": "false"
+                    }
+                ]
             ]
-        }
-    ]
+        ]
+    }
 }

@@ -1,95 +1,43 @@
 # ninja log v5
-5	4071	7443076944843688	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-4072	6128	7443076965487273	search_engine.exe	bdffdb56cd3394fd
-11	5262	7436175790187286	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	f17682f0e52e259
-4072	6128	7443076965487273	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-0	161	7440408220598662	build.ninja	8ebe8ea27a01520e
+6	4087	7443247766993239	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
+4088	5933	7443247785536028	search_engine.exe	bdffdb56cd3394fd
 9	1538	7436150638993755	CMakeFiles/search_engine.dir/ConverterJSON.cpp.obj	c7c905e429d04dd3
-6804	6871	7436175806390397	lib/libgtest_maind.a	4c26d9e99d25939a
+4088	5933	7443247785536028	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
+0	161	7440408220598662	build.ninja	8ebe8ea27a01520e
+11	5262	7436175790187286	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	f17682f0e52e259
 17	1018	7436175747820713	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	c7ae168ffb999d16
+6804	6871	7436175806390397	lib/libgtest_maind.a	4c26d9e99d25939a
 5264	6804	7436175805710372	lib/libgtestd.a	41c10e3c37f49de1
-4072	6128	7443076965487273	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	3941	7443077491120161	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-3942	5959	7443077511381944	search_engine.exe	bdffdb56cd3394fd
-3942	5959	7443077511381944	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-3942	5959	7443077511381944	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	3881	7443078426126218	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-3881	5867	7443078446072165	search_engine.exe	bdffdb56cd3394fd
-3881	5867	7443078446072165	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-3881	5867	7443078446072165	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	3964	7443089051983762	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-3964	6241	7443089074834831	search_engine.exe	bdffdb56cd3394fd
-3964	6241	7443089074834831	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-3964	6241	7443089074834831	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	4037	7443094129456950	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-4037	6301	7443094152165832	search_engine.exe	bdffdb56cd3394fd
-4037	6301	7443094152165832	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-4037	6301	7443094152165832	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-5	3986	7443104452455413	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-3987	5806	7443104470722762	search_engine.exe	bdffdb56cd3394fd
-3987	5806	7443104470722762	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-3987	5806	7443104470722762	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-5	4020	7443106859796244	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-4021	5857	7443106878225258	search_engine.exe	bdffdb56cd3394fd
-4021	5857	7443106878225258	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-4021	5857	7443106878225258	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	4183	7443147074241443	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-4183	6046	7443147092951437	search_engine.exe	bdffdb56cd3394fd
-4183	6046	7443147092951437	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-4183	6046	7443147092951437	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	3929	7443151726050652	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-3930	5739	7443151744218722	search_engine.exe	bdffdb56cd3394fd
-3930	5739	7443151744218722	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-3930	5739	7443151744218722	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	4004	7443152119018212	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-4005	5873	7443152137783369	search_engine.exe	bdffdb56cd3394fd
-4005	5873	7443152137783369	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-4005	5873	7443152137783369	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-5	3953	7443153310262305	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-3954	5794	7443153328749549	search_engine.exe	bdffdb56cd3394fd
-3954	5794	7443153328749549	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-3954	5794	7443153328749549	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	4039	7443162825726002	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-4040	5892	7443162844356014	search_engine.exe	bdffdb56cd3394fd
-4040	5892	7443162844356014	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-4040	5892	7443162844356014	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-5	3981	7443163251841910	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-3982	5819	7443163270301945	search_engine.exe	bdffdb56cd3394fd
-3982	5819	7443163270301945	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-3982	5819	7443163270301945	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-5	3898	7443170840491113	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-3898	5735	7443170858947874	search_engine.exe	bdffdb56cd3394fd
-3898	5735	7443170858947874	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-3898	5735	7443170858947874	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	3992	7443171069272839	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-3993	5839	7443171087822865	search_engine.exe	bdffdb56cd3394fd
-3993	5839	7443171087822865	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-3993	5839	7443171087822865	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	4048	7443174137089588	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-4048	5895	7443174155629589	search_engine.exe	bdffdb56cd3394fd
-4048	5895	7443174155629589	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-4048	5895	7443174155629589	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	3981	7443174501711891	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-3982	5803	7443174519994760	search_engine.exe	bdffdb56cd3394fd
-3982	5803	7443174519994760	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-3982	5803	7443174519994760	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	4147	7443174717899689	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-4148	5991	7443174736420241	search_engine.exe	bdffdb56cd3394fd
-4148	5991	7443174736420241	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-4148	5991	7443174736420241	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	3882	7443180455439838	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-3883	5702	7443180473709841	search_engine.exe	bdffdb56cd3394fd
-3883	5702	7443180473709841	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-3883	5702	7443180473709841	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	3940	7443228521704193	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-3940	5812	7443228540502673	search_engine.exe	bdffdb56cd3394fd
-3940	5812	7443228540502673	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-3940	5812	7443228540502673	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-5	4027	7443228991540182	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-4028	5891	7443229010254638	search_engine.exe	bdffdb56cd3394fd
-4028	5891	7443229010254638	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-4028	5891	7443229010254638	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
-6	3963	7443245063618429	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
-3963	5798	7443245082046758	search_engine.exe	bdffdb56cd3394fd
-3963	5798	7443245082046758	search_engine[1]_tests.cmake	bdffdb56cd3394fd
-3963	5798	7443245082046758	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
+4088	5933	7443247785536028	search_engine[1]_tests.cmake	bdffdb56cd3394fd
+6	3967	7443248125316162	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
+3967	5800	7443248143726534	search_engine.exe	bdffdb56cd3394fd
+3967	5800	7443248143726534	search_engine[1]_tests.cmake	bdffdb56cd3394fd
+3967	5800	7443248143726534	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
+5	4097	7443249778614643	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
+4097	5982	7443249797542135	search_engine.exe	bdffdb56cd3394fd
+4097	5982	7443249797542135	search_engine[1]_tests.cmake	bdffdb56cd3394fd
+4097	5982	7443249797542135	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
+6	4026	7443251513422570	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
+4027	5908	7443251532318320	search_engine.exe	bdffdb56cd3394fd
+4027	5908	7443251532318320	search_engine[1]_tests.cmake	bdffdb56cd3394fd
+4027	5908	7443251532318320	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
+6	4455	7443254541482985	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
+4456	6312	7443254560138037	search_engine.exe	bdffdb56cd3394fd
+4456	6312	7443254560138037	search_engine[1]_tests.cmake	bdffdb56cd3394fd
+4456	6312	7443254560138037	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
+5	3603	7443256215479750	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
+3604	5048	7443256229989803	search_engine.exe	bdffdb56cd3394fd
+3604	5048	7443256229989803	search_engine[1]_tests.cmake	bdffdb56cd3394fd
+3604	5048	7443256229989803	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
+6	4115	7443270133057688	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
+4115	5975	7443270151736724	search_engine.exe	bdffdb56cd3394fd
+4115	5975	7443270151736724	search_engine[1]_tests.cmake	bdffdb56cd3394fd
+4115	5975	7443270151736724	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
+6	4016	7443908151274139	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
+4016	6585	7443908177026056	search_engine.exe	bdffdb56cd3394fd
+4016	6585	7443908177026056	search_engine[1]_tests.cmake	bdffdb56cd3394fd
+4016	6585	7443908177026056	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd
+6	4004	7443910672003071	CMakeFiles/search_engine.dir/main.cpp.obj	9f26f9fb8603bf2c
+4004	6259	7443910694624651	search_engine.exe	bdffdb56cd3394fd
+4004	6259	7443910694624651	search_engine[1]_tests.cmake	bdffdb56cd3394fd
+4004	6259	7443910694624651	E:/Programs/Git Projects/search_engine/cmake-build-debug/search_engine[1]_tests.cmake	bdffdb56cd3394fd

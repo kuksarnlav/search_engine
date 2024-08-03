@@ -83,9 +83,8 @@ public:
                 documentRelativeRelevance.emplace_back(rarestWordDocument);
             } else {
                 float absoluteRankMax;
-
+                std::vector<RelativeIndex> rarestWordDocument;
                 for (int j = 0; j < rarestWordDocuments.size(); j++){ // : documents
-                    std::vector<RelativeIndex> rarestWordDocument;
                     float absoluteRank = 0;
                     for (auto it = uniqueWords.begin(); it != uniqueWords.end(); it++){
                         int k = 0;
@@ -99,8 +98,8 @@ public:
                     }
                     RelativeIndex tempIndex{rarestWordDocuments[j], absoluteRank};
                     rarestWordDocument.emplace_back(tempIndex);
-                    documentRelativeRelevance.emplace_back(rarestWordDocument);
                 }
+                documentRelativeRelevance.emplace_back(rarestWordDocument);
 
                 for (int j = 0; j < documentRelativeRelevance[i].size(); j++){
                     documentRelativeRelevance[i][j].rank /= absoluteRankMax;
