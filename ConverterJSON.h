@@ -61,23 +61,28 @@ public:
         for (const auto& request : answers){
             int iDocument = 0;
             nlohmann::json requestDocumentRelevance;
+            nlohmann::json requestResultAttribute;
+            bool isRequestSucceed = true;
             for (const auto& relativeIndex : request){
 
-                nlohmann::json requestResultAttribute;
                 if (relativeIndex.second >= 0){
                     requestResultAttribute["result"] = "true";
                     nlohmann::json temp;
                     temp["docid"] = relativeIndex.first;
                     temp["rank"] = relativeIndex.second;
-                    requestDocumentRelevance[iDocument] = {requestResultAttribute, temp};
+                    requestDocumentRelevance[iDocument] = {temp};
                 } else {
+                    isRequestSucceed = false;
                     requestResultAttribute["result"] = "false";
-                    requestDocumentRelevance[iDocument] = {requestResultAttribute};
                 }
 
                 iDocument++;
             }
-            requestAttributeFilling["request" + std::to_string(iRequest)] = {requestDocumentRelevance};
+            if (isRequestSucceed){
+                requestAttributeFilling["request" + std::to_string(iRequest)] = {requestResultAttribute, requestDocumentRelevance};
+            } else {
+                requestAttributeFilling["request" + std::to_string(iRequest)] = {requestResultAttribute};
+            }
 
             iRequest++;
         }
