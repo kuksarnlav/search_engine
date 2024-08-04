@@ -22,7 +22,7 @@ public:
             if (file.is_open()){
                 std::getline(file, line);
             } else{
-                std::cerr << "Unable to open file" << std::endl;
+                std::cerr << "Unable to open file\n";
             }
             file.close();
             textDocuments.push_back(line);
