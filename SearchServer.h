@@ -19,7 +19,7 @@ class SearchServer {
 public:
     SearchServer(InvertedIndex idx) : _index(idx){};
 
-    std::vector<std::vector<std::pair<int, float>>> convertRelativeIndexToPair(const std::vector<std::vector<RelativeIndex>>& relativeIndexVec){ // not tested yet // mb
+    std::vector<std::vector<std::pair<int, float>>> convertRelativeIndexToPair(const std::vector<std::vector<RelativeIndex>>& relativeIndexVec){
         std::vector<std::vector<std::pair<int, float>>> pairVec;
         for (const auto& innerVec : relativeIndexVec){
             std::vector<std::pair<int, float>> innerPairVec;
@@ -36,7 +36,7 @@ public:
         std::vector<std::vector<RelativeIndex>> documentRelativeRelevance;
         for (int i = 0; i < queries_input.size(); i++){
 
-            std::set<std::string> uniqueWords; // unique words in request into std::set
+            std::set<std::string> uniqueWords;
             std::istringstream iss(queries_input[i]);
             std::string word;
             while (iss >> word){
@@ -44,7 +44,7 @@ public:
             }
 
 
-            std::multimap<int, std::string> uniqueWordsOccurrenceInRequest; // №request -> (frequency_in_all_requests - word) into std::map
+            std::multimap<int, std::string> uniqueWordsOccurrenceInRequest;
             for (auto it = uniqueWords.begin(); it != uniqueWords.end(); it++){
                 int wordOccurrence = 0;
                 for (int k = 0; k < _index.GetWordCount(*it).size(); k++){
@@ -54,14 +54,14 @@ public:
             }
 
 
-            std::vector<size_t> rarestWordDocuments; // №document with all request words
+            std::vector<size_t> rarestWordDocuments;
             auto firstMultimapElement = uniqueWordsOccurrenceInRequest.begin();
-            for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){ // rarest word №document
+            for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){
                 rarestWordDocuments.emplace_back(_index.GetWordCount(firstMultimapElement->second)[j].doc_id);
             }
 
 
-            for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){ // deleting №document without request word
+            for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){
                 for (auto it = std::next(uniqueWordsOccurrenceInRequest.begin()); it != uniqueWordsOccurrenceInRequest.end(); it++){
                     for (int k = 0; k < _index.GetWordCount(it->second).size(); k++){
                         if (rarestWordDocuments[j] == _index.GetWordCount(it->second)[k].doc_id){
