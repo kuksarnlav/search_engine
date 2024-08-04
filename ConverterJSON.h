@@ -78,10 +78,20 @@ public:
 
                 iDocument++;
             }
+
+            std::string requestName;
+            if (iRequest > 99){
+                requestName = "request" + std::to_string(iRequest + 1);
+            } else if (iRequest > 9){
+                requestName = "request0" + std::to_string(iRequest + 1);
+            } else{
+                requestName = "request00" + std::to_string(iRequest + 1);
+            }
+
             if (isRequestSucceed){
-                requestAttributeFilling["request" + std::to_string(iRequest)] = {requestResultAttribute, requestDocumentRelevance};
+                requestAttributeFilling[requestName] = {requestResultAttribute, requestDocumentRelevance};
             } else {
-                requestAttributeFilling["request" + std::to_string(iRequest)] = {requestResultAttribute};
+                requestAttributeFilling[requestName] = {requestResultAttribute};
             }
 
             iRequest++;

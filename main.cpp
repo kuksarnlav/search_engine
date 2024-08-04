@@ -3,6 +3,7 @@
 #include "SearchServer.h"
 
 // Check the config.json, as I remember if there aren't any info about version program need to give out mistake
+// 999 requests only, as I remebmer
 
 int main() {
     ConverterJSON searchMachine;
