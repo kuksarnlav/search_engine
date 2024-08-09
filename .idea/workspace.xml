@@ -22,7 +22,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6875673-372f-4bb9-a219-f2ff64d0e15c" name="Changes" comment="" />
+    <list default="true" id="c6875673-372f-4bb9-a219-f2ff64d0e15c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file003.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file004.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SearchServer.h" beforeDir="false" afterPath="$PROJECT_DIR$/SearchServer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/answers.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/answers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/requests.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/requests.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/resources/file001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file001.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/resources/file002.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file002.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/search_engine.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/search_engine.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +46,9 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -41,6 +58,9 @@
     <option name="minorVersion" value="2" />
   </component>
   <component name="ProjectId" id="2kPy6hFUMlLGCmADu6vIZ8H3Htz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -54,13 +74,31 @@
     "ctest.advertisement.all.test.configuration.is.created": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="CMake Application.search_engine">
+  <component name="RunManager" selected="Google Test.run_tests">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestCaseInvertedIndex.TestBasic" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="search_engine" TARGET_NAME="run_tests" RUN_TARGET_PROJECT_NAME="search_engine" RUN_TARGET_NAME="run_tests" TEST_CLASS="TestCaseInvertedIndex" TEST_METHOD="TestBasic" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCaseInvertedIndex.TestBasic2" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="search_engine" TARGET_NAME="run_tests" RUN_TARGET_PROJECT_NAME="search_engine" RUN_TARGET_NAME="run_tests" TEST_CLASS="TestCaseInvertedIndex" TEST_METHOD="TestBasic2" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="run_tests" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="search_engine" TARGET_NAME="run_tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="search_engine" RUN_TARGET_NAME="run_tests" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sample_test_case.sample_test" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="search_engine" TARGET_NAME="run_tests" RUN_TARGET_PROJECT_NAME="search_engine" RUN_TARGET_NAME="run_tests" TEST_CLASS="sample_test_case" TEST_METHOD="sample_test" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -105,7 +143,17 @@
       <item itemvalue="CMake Application.gtest_main" />
       <item itemvalue="CTest Application.All CTest" />
       <item itemvalue="Google Test.run_tests" />
+      <item itemvalue="Google Test.TestCaseInvertedIndex.TestBasic" />
+      <item itemvalue="Google Test.TestCaseInvertedIndex.TestBasic2" />
+      <item itemvalue="Google Test.sample_test_case.sample_test" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Google Test.TestCaseInvertedIndex.TestBasic2" />
+        <item itemvalue="Google Test.TestCaseInvertedIndex.TestBasic" />
+        <item itemvalue="Google Test.sample_test_case.sample_test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -115,11 +163,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723199332718</updated>
-      <workItem from="1723199334670" duration="416000" />
+      <workItem from="1723199334670" duration="2751000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

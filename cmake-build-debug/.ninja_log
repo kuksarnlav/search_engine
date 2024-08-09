@@ -1,3 +1,37 @@
 # ninja log v5
 1	4287	7449030099897083	CMakeFiles/search_engine.dir/main.cpp.obj	4a2a5802ee958993
 4290	6164	7449030118708252	search_engine.exe	c3d5c5363c28dbe
+11	1374	7449032272948903	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	c7ae168ffb999d16
+2	3121	7449032290408987	CMakeFiles/run_tests.dir/test.cpp.obj	cb58b60474daf146
+19	5466	7449032313780291	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	f17682f0e52e259
+5468	6961	7449032328835452	lib/libgtestd.a	41c10e3c37f49de1
+6962	7033	7449032329565457	lib/libgtest_maind.a	4c26d9e99d25939a
+7033	9177	7449032350975491	run_tests.exe	c0707c3686564774
+7033	9177	7449032350975491	run_tests[1]_tests.cmake	c0707c3686564774
+7033	9177	7449032350975491	E:/Programs/Git Projects/search_engine/cmake-build-debug/run_tests[1]_tests.cmake	c0707c3686564774
+5	2639	7449043529311514	CMakeFiles/run_tests.dir/test.cpp.obj	cb58b60474daf146
+2640	4826	7449043551179195	run_tests.exe	c0707c3686564774
+2640	4826	7449043551179195	run_tests[1]_tests.cmake	c0707c3686564774
+2640	4826	7449043551179195	E:/Programs/Git Projects/search_engine/cmake-build-debug/run_tests[1]_tests.cmake	c0707c3686564774
+7	2536	7449043810513453	CMakeFiles/run_tests.dir/test.cpp.obj	cb58b60474daf146
+2536	4659	7449043831775095	run_tests.exe	c0707c3686564774
+2536	4659	7449043831775095	run_tests[1]_tests.cmake	c0707c3686564774
+2536	4659	7449043831775095	E:/Programs/Git Projects/search_engine/cmake-build-debug/run_tests[1]_tests.cmake	c0707c3686564774
+5	2485	7449044286158178	CMakeFiles/run_tests.dir/test.cpp.obj	cb58b60474daf146
+2485	4618	7449044307514476	run_tests.exe	c0707c3686564774
+2485	4618	7449044307514476	run_tests[1]_tests.cmake	c0707c3686564774
+2485	4618	7449044307514476	E:/Programs/Git Projects/search_engine/cmake-build-debug/run_tests[1]_tests.cmake	c0707c3686564774
+6	2586	7449044988538413	CMakeFiles/run_tests.dir/test.cpp.obj	cb58b60474daf146
+2586	4714	7449045009848426	run_tests.exe	c0707c3686564774
+2586	4714	7449045009848426	run_tests[1]_tests.cmake	c0707c3686564774
+2586	4714	7449045009848426	E:/Programs/Git Projects/search_engine/cmake-build-debug/run_tests[1]_tests.cmake	c0707c3686564774
+5	3908	7449047314801866	CMakeFiles/search_engine.dir/main.cpp.obj	4a2a5802ee958993
+3909	5732	7449047333070433	search_engine.exe	c3d5c5363c28dbe
+8	2633	7449063748091206	CMakeFiles/run_tests.dir/test.cpp.obj	cb58b60474daf146
+2633	4744	7449063769210955	run_tests.exe	c0707c3686564774
+2633	4744	7449063769210955	run_tests[1]_tests.cmake	c0707c3686564774
+2633	4744	7449063769210955	E:/Programs/Git Projects/search_engine/cmake-build-debug/run_tests[1]_tests.cmake	c0707c3686564774
+5	2597	7449064590442644	CMakeFiles/run_tests.dir/test.cpp.obj	cb58b60474daf146
+2598	4752	7449064612015836	run_tests.exe	c0707c3686564774
+2598	4752	7449064612015836	run_tests[1]_tests.cmake	c0707c3686564774
+2598	4752	7449064612015836	E:/Programs/Git Projects/search_engine/cmake-build-debug/run_tests[1]_tests.cmake	c0707c3686564774

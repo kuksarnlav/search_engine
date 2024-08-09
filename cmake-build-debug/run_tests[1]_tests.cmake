@@ -1,0 +1,7 @@
+add_test([=[TestCaseInvertedIndex.TestBasic]=]  [==[E:/Programs/Git Projects/search_engine/cmake-build-debug/run_tests.exe]==] [==[--gtest_filter=TestCaseInvertedIndex.TestBasic]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[TestCaseInvertedIndex.TestBasic]=]  PROPERTIES WORKING_DIRECTORY [==[E:/Programs/Git Projects/search_engine/cmake-build-debug]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[TestCaseInvertedIndex.TestBasic2]=]  [==[E:/Programs/Git Projects/search_engine/cmake-build-debug/run_tests.exe]==] [==[--gtest_filter=TestCaseInvertedIndex.TestBasic2]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[TestCaseInvertedIndex.TestBasic2]=]  PROPERTIES WORKING_DIRECTORY [==[E:/Programs/Git Projects/search_engine/cmake-build-debug]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[TestCaseInvertedIndex.TestInvertedIndexMissingWord]=]  [==[E:/Programs/Git Projects/search_engine/cmake-build-debug/run_tests.exe]==] [==[--gtest_filter=TestCaseInvertedIndex.TestInvertedIndexMissingWord]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[TestCaseInvertedIndex.TestInvertedIndexMissingWord]=]  PROPERTIES WORKING_DIRECTORY [==[E:/Programs/Git Projects/search_engine/cmake-build-debug]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  run_tests_TESTS TestCaseInvertedIndex.TestBasic TestCaseInvertedIndex.TestBasic2 TestCaseInvertedIndex.TestInvertedIndexMissingWord)

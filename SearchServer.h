@@ -113,11 +113,3 @@ public:
 private:
     InvertedIndex _index;
 };
-
-
-
-/*
-
-
-
-*/
