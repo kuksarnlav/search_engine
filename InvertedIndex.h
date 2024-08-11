@@ -45,19 +45,29 @@ private:
     std::map<std::string, std::vector<Entry>> freq_dictionary;
     std::mutex mtx;
 
-    void ProcessDocument(const std::string& doc, int doc_id) {
+    void ProcessDocument(const std::string& doc, int doc_id){
         std::istringstream iss(doc);
         std::string word;
 
         while (iss >> word){
-            std::lock_guard<std::mutex> lock(mtx);
-            if (freq_dictionary[word].size() != doc_id + 1){
+            if (freq_dictionary[word].empty()){
                 Entry insertedStructure;
                 insertedStructure.doc_id = doc_id;
                 insertedStructure.count++;
-                freq_dictionary[word].push_back(insertedStructure);
-            } else{
-                freq_dictionary[word][doc_id].count++;
+                freq_dictionary[word].emplace_back(insertedStructure);
+            } else {
+                for (int j = 0; j < freq_dictionary[word].size(); j++){
+                    if (freq_dictionary[word][j].doc_id == doc_id){
+                        freq_dictionary[word][j].count++;
+                        break;
+                    } else if (j == freq_dictionary[word].size() - 1){
+                        Entry insertedStructure;
+                        insertedStructure.doc_id = doc_id;
+                        insertedStructure.count++;
+                        freq_dictionary[word].emplace_back(insertedStructure);
+                        break;
+                    }
+                }
             }
         }
     }

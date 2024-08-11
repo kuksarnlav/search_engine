@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
@@ -23,17 +23,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6875673-372f-4bb9-a219-f2ff64d0e15c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file003.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file004.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file005.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file006.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex.h" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SearchServer.h" beforeDir="false" afterPath="$PROJECT_DIR$/SearchServer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/run_tests.dir/test.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/run_tests.dir/test.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/search_engine.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/search_engine.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/answers.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/answers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/requests.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/requests.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/resources/file001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file001.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/resources/file002.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file002.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/resources/file003.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file003.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/resources/file004.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file004.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/run_tests.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/run_tests.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/run_tests[1]_tests.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/run_tests[1]_tests.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/search_engine.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/search_engine.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test.cpp" afterDir="false" />
     </list>
@@ -65,21 +72,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "ctest.advertisement.all.test.configuration.is.created": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;ctest.advertisement.all.test.configuration.is.created&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Google Test.run_tests">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestCaseInvertedIndex.TestBasic" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="search_engine" TARGET_NAME="run_tests" RUN_TARGET_PROJECT_NAME="search_engine" RUN_TARGET_NAME="run_tests" TEST_CLASS="TestCaseInvertedIndex" TEST_METHOD="TestBasic" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -163,7 +165,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723199332718</updated>
-      <workItem from="1723199334670" duration="2751000" />
+      <workItem from="1723199334670" duration="18299000" />
+      <workItem from="1723280110269" duration="46000" />
+      <workItem from="1723280175089" duration="12757000" />
+      <workItem from="1723362653915" duration="2386000" />
     </task>
     <servers />
   </component>
@@ -180,5 +185,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="CMakeGoogleTestRunConfigurationType">
+        <watch expression="idx" />
+      </configuration>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="answers[1]" />
+        <watch expression="this-&gt;_index.freq_dictionary[3]" />
+        <watch expression="this-&gt;_index.freq_dictionary[0].first" />
+        <watch expression="input_docs" />
+        <watch expression="this-&gt;freq_dictionary[0].second[1]" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

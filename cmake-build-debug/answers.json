@@ -7,41 +7,11 @@
             [
                 [
                     {
-                        "docid": 0,
+                        "docid": 4,
                         "rank": 1.0
                     }
-                ],
-                [
-                    {
-                        "docid": 1,
-                        "rank": 0.25
-                    }
                 ]
             ]
-        ],
-        "request002": [
-            {
-                "result": "true"
-            },
-            [
-                [
-                    {
-                        "docid": 0,
-                        "rank": 0.75
-                    }
-                ],
-                [
-                    {
-                        "docid": 1,
-                        "rank": 0.5
-                    }
-                ]
-            ]
-        ],
-        "request003": [
-            {
-                "result": "false"
-            }
         ]
     }
 }

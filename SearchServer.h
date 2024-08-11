@@ -37,10 +37,13 @@ public:
         for (int i = 0; i < queries_input.size(); i++){
 
             std::set<std::string> uniqueWords;
-            std::istringstream iss(queries_input[i]);
-            std::string word;
-            while (iss >> word){
-                uniqueWords.insert(word);
+            {
+                std::istringstream iss(queries_input[i]);
+                std::string word;
+
+                while (iss >> word){
+                    uniqueWords.insert(word);
+                }
             }
 
 
@@ -55,20 +58,23 @@ public:
 
 
             std::vector<size_t> rarestWordDocuments;
-            auto firstMultimapElement = uniqueWordsOccurrenceInRequest.begin();
-            for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){
-                rarestWordDocuments.emplace_back(_index.GetWordCount(firstMultimapElement->second)[j].doc_id);
-            }
+            {
+                auto firstMultimapElement = uniqueWordsOccurrenceInRequest.begin();
 
-
-            for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){
-                for (auto it = std::next(uniqueWordsOccurrenceInRequest.begin()); it != uniqueWordsOccurrenceInRequest.end(); it++){
-                    for (int k = 0; k < _index.GetWordCount(it->second).size(); k++){
-                        if (rarestWordDocuments[j] == _index.GetWordCount(it->second)[k].doc_id){
-                            break;
-                        } else if (k == _index.GetWordCount(it->second).size() - 1){
-                            rarestWordDocuments.erase(rarestWordDocuments.begin() + j);
-                            j--;
+                for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){
+                    rarestWordDocuments.emplace_back(_index.GetWordCount(firstMultimapElement->second)[j].doc_id);
+                }
+                for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){
+                    for (auto it = std::next(uniqueWordsOccurrenceInRequest.begin()); it != uniqueWordsOccurrenceInRequest.end(); it++){
+                        for (int k = 0; k < _index.GetWordCount(it->second).size(); k++){
+                            if (rarestWordDocuments[j] == _index.GetWordCount(it->second)[k].doc_id){
+                                break;
+                            } else if (k == _index.GetWordCount(it->second).size() - 1){
+                                rarestWordDocuments.erase(rarestWordDocuments.begin() + j);
+                                if (j != _index.GetWordCount(firstMultimapElement->second).size() - 1){
+                                    j--;
+                                }
+                            }
                         }
                     }
                 }
