@@ -24,17 +24,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c6875673-372f-4bb9-a219-f2ff64d0e15c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConverterJSON.h" beforeDir="false" afterPath="$PROJECT_DIR$/ConverterJSON.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SearchServer.h" beforeDir="false" afterPath="$PROJECT_DIR$/SearchServer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/run_tests.dir/test.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/run_tests.dir/test.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/search_engine.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/search_engine.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/answers.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/answers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/requests.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/requests.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/run_tests.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/run_tests.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/search_engine.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/search_engine.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +67,7 @@
     &quot;ctest.advertisement.all.test.configuration.is.created&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="CMake Application.search_engine">
+  <component name="RunManager" selected="Google Test.run_tests">
     <configuration name="TestCaseInvertedIndex.TestBasic" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="search_engine" TARGET_NAME="run_tests" RUN_TARGET_PROJECT_NAME="search_engine" RUN_TARGET_NAME="run_tests" TEST_CLASS="TestCaseInvertedIndex" TEST_METHOD="TestBasic" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -161,7 +155,7 @@
       <workItem from="1723280110269" duration="46000" />
       <workItem from="1723280175089" duration="12757000" />
       <workItem from="1723362653915" duration="2557000" />
-      <workItem from="1723460545837" duration="10644000" />
+      <workItem from="1723460545837" duration="11021000" />
     </task>
     <servers />
   </component>
