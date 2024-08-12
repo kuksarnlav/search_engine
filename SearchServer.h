@@ -32,7 +32,7 @@ public:
 
     std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input){
 
-        std::vector<std::vector<RelativeIndex>> documentRelativeRelevance;
+        std::vector<std::vector<RelativeIndex>> docRelevance;
         for (int i = 0; i < queries_input.size(); i++){
 
             std::set<std::string> uniqueWords;
@@ -46,30 +46,30 @@ public:
             }
 
 
-            std::multimap<int, std::string> uniqueWordsOccurrenceInRequest;
+            std::multimap<int, std::string> uniqueWordsOccurrence;
             for (auto it = uniqueWords.begin(); it != uniqueWords.end(); it++){
                 int wordOccurrence = 0;
                 for (int k = 0; k < _index.GetWordCount(*it).size(); k++){
                     wordOccurrence += _index.GetWordCount(*it)[k].count;
                 }
-                uniqueWordsOccurrenceInRequest.insert({wordOccurrence, *it});
+                uniqueWordsOccurrence.insert({wordOccurrence, *it});
             }
 
 
-            std::vector<size_t> rarestWordDocuments;
+            std::vector<size_t> rarestWordDocs;
             {
-                auto firstMultimapElement = uniqueWordsOccurrenceInRequest.begin();
+                auto firstMultimapElement = uniqueWordsOccurrence.begin();
 
                 for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){
-                    rarestWordDocuments.emplace_back(_index.GetWordCount(firstMultimapElement->second)[j].doc_id);
+                    rarestWordDocs.emplace_back(_index.GetWordCount(firstMultimapElement->second)[j].doc_id);
                 }
                 for (int j = 0; j < _index.GetWordCount(firstMultimapElement->second).size(); j++){
-                    for (auto it = std::next(uniqueWordsOccurrenceInRequest.begin()); it != uniqueWordsOccurrenceInRequest.end(); it++){
+                    for (auto it = std::next(uniqueWordsOccurrence.begin()); it != uniqueWordsOccurrence.end(); it++){
                         for (int k = 0; k < _index.GetWordCount(it->second).size(); k++){
-                            if (rarestWordDocuments[j] == _index.GetWordCount(it->second)[k].doc_id){
+                            if (rarestWordDocs[j] == _index.GetWordCount(it->second)[k].doc_id){
                                 break;
                             } else if (k == _index.GetWordCount(it->second).size() - 1){
-                                rarestWordDocuments.erase(rarestWordDocuments.begin() + j);
+                                rarestWordDocs.erase(rarestWordDocs.begin() + j);
                                 if (j != _index.GetWordCount(firstMultimapElement->second).size() - 1){
                                     j--;
                                 }
@@ -81,19 +81,19 @@ public:
 
 
             float noMatch = -1;
-            if (rarestWordDocuments.empty()){
+            if (rarestWordDocs.empty()){
                 std::vector<RelativeIndex> rarestWordDocument;
                 RelativeIndex tempIndex{0, noMatch};
                 rarestWordDocument.emplace_back(tempIndex);
-                documentRelativeRelevance.emplace_back(rarestWordDocument);
+                docRelevance.emplace_back(rarestWordDocument);
             } else {
                 float absoluteRankMax;
-                std::vector<RelativeIndex> rarestWordDocument;
-                for (int j = 0; j < rarestWordDocuments.size(); j++){ // : documents
+                std::vector<RelativeIndex> rarestWordDoc;
+                for (int j = 0; j < rarestWordDocs.size(); j++){ // : documents
                     float absoluteRank = 0;
                     for (auto it = uniqueWords.begin(); it != uniqueWords.end(); it++){
                         int k = 0;
-                        while (_index.GetWordCount(*it)[k].doc_id != rarestWordDocuments[j]){
+                        while (_index.GetWordCount(*it)[k].doc_id != rarestWordDocs[j]){
                             k++;
                         }
                         absoluteRank += _index.GetWordCount(*it)[k].count;
@@ -101,18 +101,18 @@ public:
                     if (absoluteRankMax < absoluteRank){
                         absoluteRankMax = absoluteRank;
                     }
-                    RelativeIndex tempIndex{rarestWordDocuments[j], absoluteRank};
-                    rarestWordDocument.emplace_back(tempIndex);
+                    RelativeIndex tempIndex{rarestWordDocs[j], absoluteRank};
+                    rarestWordDoc.emplace_back(tempIndex);
                 }
-                documentRelativeRelevance.emplace_back(rarestWordDocument);
+                docRelevance.emplace_back(rarestWordDoc);
 
-                for (int j = 0; j < documentRelativeRelevance[i].size(); j++){
-                    documentRelativeRelevance[i][j].rank /= absoluteRankMax;
+                for (int j = 0; j < docRelevance[i].size(); j++){
+                    docRelevance[i][j].rank /= absoluteRankMax;
                 }
             }
         }
 
-        return documentRelativeRelevance;
+        return docRelevance;
     }
 
 private:

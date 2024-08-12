@@ -15,10 +15,19 @@ public:
         if (configJSON["config"] == nullptr) {
             std::cerr << "config file is empty\n";
         }
+        if (configJSON["config"]["name"] == nullptr) {
+            std::cerr << "name in config file is missing\n";
+        }
+        if (configJSON["config"]["max_responses"] == nullptr) {
+            std::cerr << "max_responses in config file is missing\n";
+        }
+        if (configJSON["config"]["version"] == nullptr) {
+            std::cerr << "version in config file is missing\n";
+        }
 
         max_responses = configJSON["config"]["max_responses"];
 
-        std::cout << "Starting " << configJSON["config"]["name"].get<std::string>() << '\n';
+        std::cout << "Starting " << configJSON["config"]["name"].get<std::string>() << " v. " << configJSON["config"]["version"] << '\n';
     }
 
     std::vector<std::string> GetTextDocuments(){
@@ -80,7 +89,7 @@ public:
         nlohmann::json requestAttributeFilling;
         for (const auto& request : answers){
             int iDocument = 0;
-            nlohmann::json requestDocumentRelevance;
+            nlohmann::json requestDocRelevance;
             nlohmann::json requestResultAttribute;
             bool isRequestSucceed = true;
             for (const auto& relativeIndex : request){
@@ -90,7 +99,7 @@ public:
                     nlohmann::json temp;
                     temp["docid"] = relativeIndex.first;
                     temp["rank"] = relativeIndex.second;
-                    requestDocumentRelevance[iDocument] = {temp};
+                    requestDocRelevance[iDocument] = {temp};
                 } else {
                     isRequestSucceed = false;
                     requestResultAttribute["result"] = "false";
@@ -109,7 +118,7 @@ public:
             }
 
             if (isRequestSucceed){
-                requestAttributeFilling[requestName] = {requestResultAttribute, requestDocumentRelevance};
+                requestAttributeFilling[requestName] = {requestResultAttribute, requestDocRelevance};
             } else {
                 requestAttributeFilling[requestName] = {requestResultAttribute};
             }
