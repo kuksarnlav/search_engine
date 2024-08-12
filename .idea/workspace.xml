@@ -23,24 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6875673-372f-4bb9-a219-f2ff64d0e15c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file005.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file006.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex.h" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SearchServer.h" beforeDir="false" afterPath="$PROJECT_DIR$/SearchServer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/run_tests.dir/test.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/run_tests.dir/test.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/search_engine.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/search_engine.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/answers.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/answers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/requests.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/requests.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/resources/file001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file001.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/resources/file003.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file003.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/resources/file004.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/resources/file004.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/run_tests.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/run_tests.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/run_tests[1]_tests.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/run_tests[1]_tests.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/search_engine.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/search_engine.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test.cpp" afterDir="false" />
     </list>
@@ -168,7 +157,8 @@
       <workItem from="1723199334670" duration="18299000" />
       <workItem from="1723280110269" duration="46000" />
       <workItem from="1723280175089" duration="12757000" />
-      <workItem from="1723362653915" duration="2386000" />
+      <workItem from="1723362653915" duration="2557000" />
+      <workItem from="1723460545837" duration="1511000" />
     </task>
     <servers />
   </component>

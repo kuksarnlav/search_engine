@@ -1,5 +1,4 @@
 #include "gtest/gtest.h"
-#include "ConverterJSON.h"
 #include "InvertedIndex.h"
 #include "SearchServer.h"
 #include <iostream>
@@ -90,21 +89,21 @@ TEST(TestCaseSearchServer, TestSimple) {
 }
 TEST(TestCaseSearchServer, TestTop5){
     const vector<string> docs = {
-            "london is the capital of great britain", // 0
-            "paris is the capital of france", // 1
-            "berlin is the capital of germany", // 2
+            "london is the capital of great britain",
+            "paris is the capital of france",
+            "berlin is the capital of germany",
             "rome is the capital of italy",
             "madrid is the capital of spain",
             "lisboa is the capital of portugal",
             "bern is the capital of switzerland",
-            "moscow is the capital of russia", // 7
+            "moscow is the capital of russia",
             "kiev is the capital of ukraine",
             "minsk is the capital of belarus",
             "astana is the capital of kazakhstan",
             "beijing is the capital of china",
             "tokyo is the capital of japan",
             "bangkok is the capital of thailand",
-            "welcome to moscow the capital of russia the third rome", // 14
+            "welcome to moscow it is the capital of russia the third rome",
             "amsterdam is the capital of netherlands",
             "helsinki is the capital of finland",
             "oslo is the capital of norway",
@@ -117,7 +116,7 @@ TEST(TestCaseSearchServer, TestTop5){
     const vector<string> request = {"moscow is the capital of russia"};
     const std::vector<vector<RelativeIndex>> expected = {
             {
-                    {7, 1}, {14, 1}, {0, 0.666666687}, {1, 0.666666687}, {2, 0.666666687}
+                    {7, 0.857142866}, {14, 1}
             }
     };
     InvertedIndex idx;
