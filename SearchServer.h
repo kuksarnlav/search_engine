@@ -4,7 +4,6 @@
 #include <set>
 #include <map>
 #include <iostream>
-#include "gtest/gtest.h"
 
 struct RelativeIndex{
     size_t doc_id;

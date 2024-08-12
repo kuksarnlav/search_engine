@@ -69,16 +69,12 @@ public:
     void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){
         std::ofstream file("answers.json");
 
-
-
-        //
-        for (const auto& innerVector : answers) {
-            for (const auto& pair : innerVector) {
-                std::cout << "(" << pair.first << ", " << pair.second << ") ";
+        for (auto& innerVector : answers) {
+            std::sort(innerVector.begin(), innerVector.end(), [](const auto& a, const auto& b){return a.second > b.second;});
+            if (innerVector.size() > max_responses){
+                innerVector.erase(innerVector.begin() + max_responses, innerVector.end());
             }
-            std::cout << std::endl;
         }
-        //
 
         int iRequest = 0;
         nlohmann::json requestAttributeFilling;
