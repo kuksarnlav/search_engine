@@ -16,6 +16,8 @@ public:
             std::cerr << "config file is empty\n";
         }
 
+        max_responses = configJSON["config"]["max_responses"];
+
         std::cout << "Starting " << configJSON["config"]["name"].get<std::string>() << '\n';
     }
 
@@ -67,6 +69,17 @@ public:
     void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){
         std::ofstream file("answers.json");
 
+
+
+        //
+        for (const auto& innerVector : answers) {
+            for (const auto& pair : innerVector) {
+                std::cout << "(" << pair.first << ", " << pair.second << ") ";
+            }
+            std::cout << std::endl;
+        }
+        //
+
         int iRequest = 0;
         nlohmann::json requestAttributeFilling;
         for (const auto& request : answers){
@@ -112,4 +125,7 @@ public:
         answersJSON["answers"] = requestAttributeFilling;
         file << answersJSON.dump(4);
     }
+
+private:
+    size_t max_responses;
 };
