@@ -7,14 +7,24 @@
 
 class ConverterJSON{
 public:
-    ConverterJSON() = default;
+    ConverterJSON(){
+        std::ifstream fileInit("config.json");
+        nlohmann::json configJSON;
+        fileInit >> configJSON;
+
+        if (configJSON["config"] == nullptr) {
+            std::cerr << "config file is empty\n";
+        }
+
+        std::cout << "Starting " << configJSON["config"]["name"].get<std::string>() << '\n';
+    }
 
     std::vector<std::string> GetTextDocuments(){
         std::vector<std::string> textDocuments;
 
-        std::ifstream file("config.json");
+        std::ifstream fileConfig("config.json");
         nlohmann::json configJSON;
-        file >> configJSON;
+        fileConfig >> configJSON;
 
         for (int i = 0; i < configJSON["files"].size(); i++){
             std::string filePath = configJSON["files"][i];

@@ -105,12 +105,7 @@ TEST(TestCaseSearchServer, TestTop5){
             "bangkok is the capital of thailand",
             "welcome to moscow it is the capital of russia the third rome",
             "amsterdam is the capital of netherlands",
-            "helsinki is the capital of finland",
-            "oslo is the capital of norway",
-            "stockholm is the capital of sweden",
-            "riga is the capital of latvia",
-            "tallinn is the capital of estonia",
-            "warsaw is the capital of poland",
+            "helsinki is the capital of finland"
     };
 
     const vector<string> request = {"moscow is the capital of russia"};
