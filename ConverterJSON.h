@@ -9,6 +9,9 @@ class ConverterJSON{
 public:
     ConverterJSON(){
         std::ifstream fileInit("config.json");
+        if (!fileInit.is_open()) {
+            std::cerr << "Can't open config.json!\n";
+        }
         nlohmann::json configJSON;
         fileInit >> configJSON;
 
@@ -34,6 +37,9 @@ public:
         std::vector<std::string> textDocuments;
 
         std::ifstream fileConfig("config.json");
+        if (!fileConfig.is_open()) {
+            std::cerr << "Can't open config.json!\n";
+        }
         nlohmann::json configJSON;
         fileConfig >> configJSON;
 
@@ -55,6 +61,9 @@ public:
 
     int GetResponsesLimit(){
         std::ifstream file("config.json");
+        if (!file.is_open()) {
+            std::cerr << "Can't open config.json!\n";
+        }
         nlohmann::json configJSON;
         file >> configJSON;
 
@@ -65,6 +74,9 @@ public:
         std::vector<std::string> requests;
 
         std::ifstream file("requests.json");
+        if (!file.is_open()) {
+            std::cerr << "Can't open config.json!\n";
+        }
         nlohmann::json requestsJSON;
         file >> requestsJSON;
 
@@ -77,6 +89,9 @@ public:
 
     void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){
         std::ofstream file("answers.json");
+        if (!file.is_open()) {
+            std::cerr << "Can't open answers.json!\n";
+        }
 
         for (auto& innerVector : answers) {
             std::sort(innerVector.begin(), innerVector.end(), [](const auto& a, const auto& b){return a.second > b.second;});
