@@ -89,7 +89,7 @@ public:
             } else {
                 float absoluteRankMax;
                 std::vector<RelativeIndex> rarestWordDoc;
-                for (int j = 0; j < rarestWordDocs.size(); j++){ // : documents
+                for (int j = 0; j < rarestWordDocs.size(); j++){
                     float absoluteRank = 0;
                     for (auto it = uniqueWords.begin(); it != uniqueWords.end(); it++){
                         int k = 0;
