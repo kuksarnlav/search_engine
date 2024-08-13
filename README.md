@@ -4,7 +4,7 @@
 - External library [***JSON for Modern C++***](https://github.com/nlohmann/json)
 - Testing framework: [***GoogleTest***](https://github.com/google)
 - CMake
-- CLion IDE
+- CLion 2022.2
 ## Project Properies & Structure
 Program is used to show the files that are more appropriate to users' requests via relevance calculation.
 
