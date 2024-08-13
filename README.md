@@ -6,7 +6,7 @@
 - CMake
 - CLion IDE
 ## Project Properies & Structure
-Program is used to show the files that are more appropriate to users' requests.
+Program is used to show the files that are more appropriate to users' requests via relevance calculation.
 
 The project structure is Object Oriented, so it consists of three header files with classes of the same name:
 - ***ConverterJSON.h*** for manipulating with .json files via the aforementioned library
