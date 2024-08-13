@@ -30,7 +30,7 @@ In addition project has downloaded and unpacked ***JSON for Modern C++*** librar
 
 ## Installation
 Current instruction is about installation and running the program in CLion IDE.
-1. [***Download ZIP Archive***](https://github.com/kuksarnlav/search_engine/archive/refs/heads/main.zip) of the project
+1. [***Download ZIP Archive***](https://github.com/kuksarnlav/search_engine/archive/refs/heads/main.zip "Download search engine") of the project
 2. Unpack the archive into your folder destination
 3. Open project folder via CLion
 4. Click OK in configuration dialog window
