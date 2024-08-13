@@ -40,4 +40,4 @@ Current instruction is about installation and running the program in CLion IDE.
 
 ![Image description](photos-for-github/run-configurations.png)
 
-Project already has some resource and .json files that are filled in correctly, .json files are enough representative for understanding the correct way to fill that files.
+Project already has some resource and .json files that are filled in correctly, which are enough representative.
