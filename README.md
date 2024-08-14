@@ -4,14 +4,14 @@
 - Testing framework: [***GoogleTest***](https://github.com/google "Visit framework github")
 - Built-in C++ tools for multithreading
 - CMake
-- CLion
+- CLion 2022.2
 ## Project Properies & Structure
 Program is used to show the files that are more appropriate to users' requests via relevance calculation.
 
-The project structure is Object Oriented, so it consists of three header files with classes' interfaces, which are implemented in .cpp files:
-- ***ConverterJSON.h*** for manipulating with .json files via the aforementioned library
-- ***InvertedIndex.h*** for restructuring documents for faster search
-- ***SearchServer.h*** for searching process.
+The project structure is Object Oriented, so it consists of three header files with classes' interfaces, which are implemented in .cpp files, classes:
+- ***ConverterJSON*** for manipulating with .json files via the aforementioned library
+- ***InvertedIndex*** for restructuring documents for faster search
+- ***SearchServer*** for searching process.
 
 Then we have ***test.cpp*** written with *GoogleTest* framefork for testing the program.
 
