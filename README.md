@@ -1,10 +1,10 @@
 # Corporate Portal Search Engine
-## Used Software & Technologies
+## Used Technologies & Software
+- External library: [***JSON for Modern C++***](https://github.com/nlohmann/json "Visit library github")
+- Testing framework: [***GoogleTest***](https://github.com/google "Visit framework github")
 - Built-in C++ tools for multithreading
-- External library [***JSON for Modern C++***](https://github.com/nlohmann/json)
-- Testing framework: [***GoogleTest***](https://github.com/google)
 - CMake
-- CLion 2022.2
+- CLion
 ## Project Properies & Structure
 Program is used to show the files that are more appropriate to users' requests via relevance calculation.
 
