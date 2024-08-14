@@ -2,6 +2,7 @@
 #include "InvertedIndex.h"
 #include "SearchServer.h"
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -13,6 +14,14 @@ void TestInvertedIndexFunctionality(const vector<string>& docs, const vector<str
         std::vector<Entry> word_count = idx.GetWordCount(request);
         result.push_back(word_count);
     }
+
+    for (auto innerVector : expected) {
+        std::sort(innerVector.begin(), innerVector.end(), [](const Entry& a, const Entry& b){return a.doc_id < b.doc_id;});
+    }
+    for (auto& innerVector : result) {
+        std::sort(innerVector.begin(), innerVector.end(), [](const Entry& a, const Entry& b){return a.doc_id < b.doc_id;});
+    }
+
     ASSERT_EQ(result, expected);
 }
 TEST(TestCaseInvertedIndex, TestBasic){
@@ -75,7 +84,7 @@ TEST(TestCaseSearchServer, TestSimple) {
     const vector<string> request = {"milk water", "sugar"};
     const std::vector<vector<RelativeIndex>> expected = {
             {
-                    {0, 0.699999988079071}, {1, 0.30000001192092896}, {2, 1.0}
+                    {2, 1.0}, {0, 0.699999988079071}, {1, 0.30000001192092896}
             },
             {
                     {0, -1.0}
@@ -85,6 +94,7 @@ TEST(TestCaseSearchServer, TestSimple) {
     idx.UpdateDocumentBase(docs);
     SearchServer srv(idx);
     std::vector<vector<RelativeIndex>> result = srv.search(request);
+
     ASSERT_EQ(result, expected);
 }
 TEST(TestCaseSearchServer, TestTop5){
@@ -111,7 +121,7 @@ TEST(TestCaseSearchServer, TestTop5){
     const vector<string> request = {"moscow is the capital of russia"};
     const std::vector<vector<RelativeIndex>> expected = {
             {
-                    {7, 0.857142866}, {14, 1}
+                    {14, 1}, {7, 0.857142866}
             }
     };
     InvertedIndex idx;

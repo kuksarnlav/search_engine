@@ -1,7 +1,6 @@
 #include "ConverterJSON.h"
 #include "nlohmann/json.hpp"
 #include <fstream>
-#include <sstream>
 #include <iostream>
 #include <vector>
 
@@ -97,7 +96,6 @@ void ConverterJSON::putAnswers(std::vector<std::vector<std::pair<int, float>>> a
     fileInit >> configJSON;
 
     for (auto& innerVector : answers) {
-        std::sort(innerVector.begin(), innerVector.end(), [](const auto& a, const auto& b){return a.second > b.second;});
         if (innerVector.size() > configJSON["config"]["max_responses"]){
             innerVector.erase(innerVector.begin() + configJSON["config"]["max_responses"], innerVector.end());
         }

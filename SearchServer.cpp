@@ -1,4 +1,5 @@
 #include "SearchServer.h"
+#include <algorithm>
 #include <sstream>
 
 std::vector<std::vector<std::pair<int, float>>> SearchServer::convertRelativeIndexToPair(const std::vector<std::vector<RelativeIndex>>& relativeIndexVec){
@@ -63,6 +64,7 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
         }
 
 
+
         float noMatch = -1;
         if (rarestWordDocs.empty()){
             std::vector<RelativeIndex> rarestWordDocument;
@@ -70,7 +72,7 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
             rarestWordDocument.emplace_back(tempIndex);
             docRelevance.emplace_back(rarestWordDocument);
         } else {
-            float absoluteRankMax;
+            float absoluteRankMax = 0;
             std::vector<RelativeIndex> rarestWordDoc;
             for (int j = 0; j < rarestWordDocs.size(); j++){
                 float absoluteRank = 0;
@@ -93,6 +95,10 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
                 docRelevance[i][j].rank /= absoluteRankMax;
             }
         }
+    }
+
+    for (auto& innerVector : docRelevance) {
+        std::sort(innerVector.begin(), innerVector.end(), [](const auto& a, const auto& b){return a.rank > b.rank;});
     }
 
     return docRelevance;
