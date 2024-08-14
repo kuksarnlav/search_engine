@@ -19,11 +19,11 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 enable_testing()
 
-add_executable(search_engine main.cpp)
+add_executable(search_engine main.cpp ConverterJSON.h ConverterJSON.cpp InvertedIndex.h InvertedIndex.cpp SearchServer.h SearchServer.cpp)
 
 target_link_libraries(search_engine PRIVATE nlohmann_json::nlohmann_json)
 
-add_executable(run_tests test.cpp)
+add_executable(run_tests test.cpp InvertedIndex.h InvertedIndex.cpp SearchServer.h SearchServer.cpp)
 target_link_libraries(run_tests PRIVATE gtest_main)
 target_link_libraries(run_tests PRIVATE nlohmann_json::nlohmann_json)
 include(GoogleTest)
