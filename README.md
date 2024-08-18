@@ -28,7 +28,7 @@ Search engine for running needs:
 
 In addition project has downloaded and unpacked ***JSON for Modern C++*** library, so you don't need to mess with setting it up and don't worry if the new version of the library will be compatible with the project.
 
-## Installation
+## Installation & Running
 Current instruction is about installation and running the program in CLion IDE.
 1. [***Download ZIP Archive***](https://github.com/kuksarnlav/search_engine/archive/refs/heads/main.zip "Download search engine") of the project
 2. Unpack the archive into your folder destination
