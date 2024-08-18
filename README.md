@@ -34,8 +34,8 @@ Current instruction is about installation and running the program in CLion IDE.
 2. Unpack the archive into your folder destination
 3. Open project folder via CLion
 4. Click OK in Open Project Wizard window
-5. Move the filling of the folder ***cmake-build-debug-src-filling*** in the path ***cmake-build-debug/src***
-6. Wait project to build
+5. Wait project to build
+6. Move the filling of the folder ***cmake-build-debug-src-filling*** in the path ***cmake-build-debug/src***
 7. When project is built run the ***search_engine*** configuration to run the program
 8. To run tests run the ***run_tests*** configuration
 
