@@ -10,7 +10,7 @@ void InvertedIndex::UpdateDocumentBase(std::vector<std::string> input_docs){
 
     std::vector<std::thread> threads;
     for (int i = 0; i < docs.size(); i++){
-        threads.emplace_back(&InvertedIndex::ProcessDocument, this, docs[i], i);
+        threads.emplace_back(&InvertedIndex::ProcessDocument, this, std::ref(docs[i]), i);
     }
 
     for (auto& thread : threads){

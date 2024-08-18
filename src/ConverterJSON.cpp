@@ -1,27 +1,45 @@
 #include "ConverterJSON.h"
 #include "nlohmann/json.hpp"
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <vector>
 
 ConverterJSON::ConverterJSON(){
     std::ifstream fileInit("config.json");
-    if (!fileInit.is_open()) {
+    if (!fileInit.is_open()){
         std::cerr << "Can't open config.json!\n";
     }
     nlohmann::json configJSON;
-    fileInit >> configJSON;
+    try{
+        fileInit >> configJSON;
+    } catch (const nlohmann::json::parse_error& e){
+        std::cerr << "\nconfig.json is written incorrectly: " << e.what() << "\n\n";
+        exit(1);
+    }
 
-    if (configJSON["config"] == nullptr) {
+    std::ifstream file("requests.json");
+    if (!file.is_open()){
+        std::cerr << "Can't open config.json!\n";
+    }
+    nlohmann::json requestsJSON;
+    try{
+        file >> requestsJSON;
+    } catch (const nlohmann::json::parse_error& e){
+        std::cerr << "\nrequests.json is written incorrectly: " << e.what() << "\n\n";
+        exit(1);
+    }
+
+    if (configJSON["config"] == nullptr){
         std::cerr << "config file is empty\n";
     }
-    if (configJSON["config"]["name"] == nullptr) {
+    if (configJSON["config"]["name"] == nullptr){
         std::cerr << "name in config file is missing\n";
     }
-    if (configJSON["config"]["max_responses"] == nullptr) {
+    if (configJSON["config"]["max_responses"] == nullptr){
         std::cerr << "max_responses in config file is missing\n";
     }
-    if (configJSON["config"]["version"] == nullptr) {
+    if (configJSON["config"]["version"] == nullptr){
         std::cerr << "version in config file is missing\n";
     }
 
