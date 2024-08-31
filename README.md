@@ -1,7 +1,7 @@
 # Corporate Portal Search Engine
 ## Used Technologies & Software
-- Testing framework: [***GoogleTest***](https://github.com/google "Visit framework github page")
-- External library: [***JSON for Modern C++***](https://github.com/nlohmann/json "Visit library github page")
+- Testing framework: [***GoogleTest***](https://github.com/google "Visit the github webpage with the framework")
+- External library: [***JSON for Modern C++***](https://github.com/nlohmann/json "Visit the library github webpage")
 - Built-in C++ tools for multithreading
 - CMake
 - CLion 2022.2
